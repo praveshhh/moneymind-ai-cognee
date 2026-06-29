@@ -1,0 +1,5 @@
+date,merchant,category,amount,sentiment,note
+2026-06-25,Nike Store,Shopping,8500,Regret,Bought sneakers impulse purchase
+2026-06-20,Starbucks Coffee,Food,350,Neutral,Coffee with friend
+2026-06-18,Zomato Food,Food,980,Happy,Dinner reward
+2026-06-15,Rent Payment,Utilities,15000,Neutral,Monthly Rent

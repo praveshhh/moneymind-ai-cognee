@@ -1,0 +1,36 @@
+# Python virtual environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.tox/
+
+# Node modules and build output
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# SQLite database files and caches
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Cognee system files and embedded databases
+.cognee_system/
+.kuzudb/
+.lancedb/
+.cognee_cache/
+.cognee/
+
+# Local configuration and secret keys
+.env
+.env.production
+.env.development
+
+# System and IDE settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

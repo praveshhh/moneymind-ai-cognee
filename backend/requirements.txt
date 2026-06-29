@@ -1,0 +1,11 @@
+fastapi>=0.116.2
+uvicorn
+sqlalchemy
+pydantic
+cognee
+python-dotenv
+python-jose[cryptography]
+passlib[bcrypt]
+httpx
+jinja2
+python-multipart
