@@ -169,8 +169,8 @@ export default function Dashboard({ onTransactionAdded }) {
   const totalBills = bills.reduce((acc, curr) => acc + (curr.status === "Unpaid" ? curr.amount : 0), 0);
   
   // Real Statement Aggregates
-  const totalIncome = summary.total_income || 0;
-  const totalExpenses = summary.total_expenses || 0;
+  const totalIncome = summary?.total_income || 0;
+  const totalExpenses = summary?.total_expenses || 0;
 
   // Real Savings Rate percentage (income - expenses) / income
   const savingsRate = totalIncome > 0 

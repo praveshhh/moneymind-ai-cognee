@@ -117,21 +117,77 @@ async def upload_csv(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
-    account = db.query(Account).filter(Account.id == account_id, Account.user_id == current_user.id).first()
-    if not account:
-        raise HTTPException(status_code=404, detail="Account not found")
-
     contents = await file.read()
     rows = []
     
     filename_lower = file.filename.lower()
+    
+    # 1. Detect Bank Account Name and Type from content
+    bank_name = None
+    bank_type = "savings"
+    reader = None
+    content_snippet = ""
+    
     if filename_lower.endswith(".pdf"):
         import pypdf
         import io
+        try:
+            pdf_file = io.BytesIO(contents)
+            reader = pypdf.PdfReader(pdf_file)
+            first_page_text = reader.pages[0].extract_text() or ""
+            content_snippet = first_page_text.lower()
+        except Exception as e:
+            print(f"Error reading PDF snippet for auto-detection: {str(e)}")
+    else:
+        try:
+            content_snippet = contents[:2000].decode("utf-8", errors="ignore").lower()
+        except Exception as e:
+            print(f"Error decoding CSV snippet for auto-detection: {str(e)}")
+
+    if "kotak" in content_snippet or "mahindra" in content_snippet:
+        bank_name = "Kotak 811"
+        bank_type = "savings"
+    elif "hdfc" in content_snippet:
+        bank_name = "HDFC Checking"
+        bank_type = "checking"
+    elif "sbi" in content_snippet or "state bank of india" in content_snippet:
+        bank_name = "SBI Savings"
+        bank_type = "savings"
+    elif "idbi" in content_snippet:
+        bank_name = "IDBI Savings"
+        bank_type = "savings"
+    elif "icici" in content_snippet:
+        bank_name = "ICICI Credit Card"
+        bank_type = "credit"
+
+    # 2. Get or create the detected account dynamically
+    if bank_name:
+        account = db.query(Account).filter(Account.user_id == current_user.id, Account.name == bank_name).first()
+        if not account:
+            initial_bal = 273.10 if bank_name == "Kotak 811" else 10000.0
+            account = Account(
+                user_id=current_user.id,
+                name=bank_name,
+                type=bank_type,
+                balance=initial_bal
+            )
+            db.add(account)
+            db.commit()
+            db.refresh(account)
+            print(f"Dynamically created bank account: {bank_name}")
+    else:
+        account = db.query(Account).filter(Account.id == account_id, Account.user_id == current_user.id).first()
+        if not account:
+            raise HTTPException(status_code=404, detail="Account not found")
+
+    # 3. Parse content based on file type
+    if filename_lower.endswith(".pdf"):
+        import io
         import re
-        
-        pdf_file = io.BytesIO(contents)
-        reader = pypdf.PdfReader(pdf_file)
+        if not reader:
+            import pypdf
+            pdf_file = io.BytesIO(contents)
+            reader = pypdf.PdfReader(pdf_file)
         
         tx_start_pattern = re.compile(r"^\s*(\d+)\s+(\d{2}\s+[A-Za-z]{3}\s+\d{4})\s*(.*)$")
         
@@ -450,3 +506,13 @@ class AccountResponse(BaseModel):
 def get_accounts(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
     accounts = db.query(Account).filter(Account.user_id == current_user.id).all()
     return accounts
+
+@router.get("/summary")
+def get_transaction_summary(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    txs = db.query(Transaction).filter(Transaction.user_id == current_user.id).all()
+    total_income = sum(abs(tx.amount) for tx in txs if tx.amount < 0)
+    total_expenses = sum(tx.amount for tx in txs if tx.amount > 0)
+    return {
+        "total_income": total_income,
+        "total_expenses": total_expenses
+    }
