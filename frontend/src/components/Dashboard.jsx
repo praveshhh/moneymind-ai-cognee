@@ -159,7 +159,7 @@ export default function Dashboard({ onTransactionAdded }) {
   };
 
   // Calculations
-  const checkingBal = accounts.find(a => a.type === "checking")?.balance || 0;
+  const checkingBal = accounts.filter(a => a.type === "checking" || a.type === "savings").reduce((sum, a) => sum + a.balance, 0);
   const creditDebt = accounts.find(a => a.type === "credit")?.balance || 0;
   const totalBills = bills.reduce((acc, curr) => acc + (curr.status === "Unpaid" ? curr.amount : 0), 0);
   const projectedSurplus = checkingBal - creditDebt - totalBills;
@@ -191,15 +191,15 @@ export default function Dashboard({ onTransactionAdded }) {
         <div className="glass-panel rounded-2xl p-5 relative overflow-hidden glass-card-glow-green">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Liquidity Balance</span>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Total Cash & Savings</span>
               <h2 className="text-2xl font-extrabold text-white mt-1">Rs. {checkingBal.toLocaleString()}</h2>
             </div>
             <div className="p-2.5 bg-primary/10 rounded-xl border border-primary/20">
               <Wallet className="w-5 h-5 text-primary" />
             </div>
           </div>
-          <div className="mt-4 flex items-center gap-1">
-            <span className="text-[10px] text-gray-400">Available Checking/Savings</span>
+          <div className="mt-3 flex items-center gap-1">
+            <span className="text-[10px] text-gray-400 leading-normal">Money in HDFC, Kotak 811, and SBI (your "Liquidity").</span>
           </div>
         </div>
 
@@ -207,15 +207,15 @@ export default function Dashboard({ onTransactionAdded }) {
         <div className="glass-panel rounded-2xl p-5 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Credit Card Debt</span>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Credit Card Bills</span>
               <h2 className="text-2xl font-extrabold text-white mt-1">Rs. {creditDebt.toLocaleString()}</h2>
             </div>
             <div className="p-2.5 bg-danger/10 rounded-xl border border-danger/20">
               <AlertTriangle className="w-5 h-5 text-danger" />
             </div>
           </div>
-          <div className="mt-4 flex items-center gap-1">
-            <span className="text-[10px] text-gray-400">Active credit balance</span>
+          <div className="mt-3 flex items-center gap-1">
+            <span className="text-[10px] text-gray-400 leading-normal">Money you owe on your ICICI credit card.</span>
           </div>
         </div>
 
@@ -223,15 +223,15 @@ export default function Dashboard({ onTransactionAdded }) {
         <div className="glass-panel rounded-2xl p-5 relative overflow-hidden glass-card-glow-indigo">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Upcoming Obligations</span>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Upcoming Bills</span>
               <h2 className="text-2xl font-extrabold text-white mt-1">Rs. {totalBills.toLocaleString()}</h2>
             </div>
             <div className="p-2.5 bg-indigo-500/10 rounded-xl border border-indigo-500/20">
               <Calendar className="w-5 h-5 text-indigo-400" />
             </div>
           </div>
-          <div className="mt-4 flex items-center gap-1">
-            <span className="text-[10px] text-gray-400">Bills due in next 30 days</span>
+          <div className="mt-3 flex items-center gap-1">
+            <span className="text-[10px] text-gray-400 leading-normal">Rent, SIP, electricity, and subscriptions due soon.</span>
           </div>
         </div>
 
@@ -247,7 +247,7 @@ export default function Dashboard({ onTransactionAdded }) {
             </div>
           </div>
           {/* Progress bar */}
-          <div className="w-full bg-gray-800 rounded-full h-1.5 mt-4">
+          <div className="w-full bg-gray-800 rounded-full h-1.5 mt-3">
             <div className="bg-accent h-1.5 rounded-full" style={{ width: `${healthScore}%` }} />
           </div>
         </div>
