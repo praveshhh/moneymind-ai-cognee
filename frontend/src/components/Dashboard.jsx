@@ -38,34 +38,26 @@ export default function Dashboard({ onTransactionAdded }) {
       const headers = { Authorization: `Bearer ${token}` };
 
       const [accRes, billRes, goalRes, budgRes, userRes] = await Promise.all([
-        axios.get("http://localhost:8000/api/transactions", { headers }), // Fetch tx to trigger account updates
+        axios.get("http://localhost:8000/api/transactions/accounts", { headers }),
         axios.get("http://localhost:8000/api/bills", { headers }),
         axios.get("http://localhost:8000/api/goals", { headers }),
         axios.get("http://localhost:8000/api/budgets", { headers }),
         axios.get("http://localhost:8000/api/auth/me", { headers })
       ]);
 
-      // Simple mock accounts list fetch
-      // We will read checking/credit info by simulating a load
-      const checkBal = 38000.0;
-      const creditBal = 4200.0;
-      
       setBills(billRes.data);
       setGoals(goalRes.data);
       setBudgets(budgRes.data);
       setUser(userRes.data);
 
-      // Deduce accounts dynamically
-      setAccounts([
-        { id: 1, name: "HDFC Checking Account", type: "checking", balance: checkBal },
-        { id: 2, name: "ICICI Credit Card", type: "credit", balance: creditBal }
-      ]);
+      const accountsList = accRes.data;
+      setAccounts(accountsList);
 
       // Set default account forms selection
-      if (!accountId) {
-        setAccountId("1");
-        setCsvAccountId("1");
-        setSmsAccountId("1");
+      if (accountsList.length > 0 && !accountId) {
+        setAccountId(accountsList[0].id.toString());
+        setCsvAccountId(accountsList[0].id.toString());
+        setSmsAccountId(accountsList[0].id.toString());
       }
     } catch (e) {
       console.error("Failed to fetch dashboard data", e);
