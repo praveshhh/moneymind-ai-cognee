@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from typing import List, Optional
 from backend.db_setup import get_db, Transaction, Account, User
 from backend.routes.auth import get_current_user
-from backend.services.memory_service import remember_transaction
+from backend.services.memory_service import remember_transaction, remember_transactions_batch
 
 router = APIRouter(prefix="/api/transactions", tags=["transactions"])
 
@@ -127,6 +127,7 @@ async def upload_csv(
     reader = csv.DictReader(csv_file)
 
     imported_count = 0
+    descriptions = []
     for row in reader:
         # Expected CSV columns: date, merchant, category, amount, sentiment, note
         try:
@@ -160,20 +161,20 @@ async def upload_csv(
             else:
                 account.balance += amount
 
-            # Ingest to Cognee Memory
-            await remember_transaction(
-                user_id=current_user.id,
-                amount=amount,
-                merchant=merchant,
-                category=category,
-                date_str=date_str,
-                sentiment=sentiment,
-                note=note
+            # Accumulate description for batching
+            event_desc = (
+                f"On {date_str}, the user spent {amount} units at {merchant} under the category '{category}'. "
+                f"Sentiment: {sentiment}. Note: {note or 'none'}"
             )
+            descriptions.append(event_desc)
             imported_count += 1
         except Exception as e:
             # Skip invalid rows
             continue
+
+    # Ingest all transactions in a single batch call to Cognee (blazing fast!)
+    if descriptions:
+        await remember_transactions_batch(user_id=current_user.id, descriptions=descriptions)
 
     db.commit()
     return {"message": f"Successfully parsed CSV statement. Ingested {imported_count} transactions into SQL database and Cognee memory graph."}

@@ -55,6 +55,22 @@ async def remember_transaction(user_id: int, amount: float, merchant: str, categ
         logger.error(f"Error in cognee.remember for transaction: {str(e)}")
         return False
 
+async def remember_transactions_batch(user_id: int, descriptions: list[str]):
+    """
+    Ingests multiple transactions in a single batch into Cognee memory.
+    """
+    if not descriptions:
+        return True
+    session_id = f"user_{user_id}"
+    combined_text = "\n".join(descriptions)
+    try:
+        await cognee.remember(combined_text, session_id=session_id)
+        logger.info(f"Cognee batch remembered {len(descriptions)} transactions for user_{user_id}")
+        return True
+    except Exception as e:
+        logger.error(f"Error in cognee.remember batch: {str(e)}")
+        return False
+
 async def remember_obligation(user_id: int, name: str, amount: float, due_date_str: str, interval: str):
     """
     Ingests a recurring commitment or future obligation into Cognee memory.
