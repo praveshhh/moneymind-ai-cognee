@@ -1,0 +1,894 @@
+date,merchant,category,amount,sentiment,note
+2025-04-02,Mr ABHISHEK SH,Others,20.0,Neutral,UPI Transaction at Mr ABHISHEK SH
+2025-04-02,MS JAIN SWEET,Food,20.0,Neutral,UPI Transaction at MS JAIN SWEET
+2025-04-02,Jeevan Sanjeetr,Others,20.0,Neutral,UPI Transaction at Jeevan Sanjeetr
+2025-04-02,Aryan genral st,Others,40.0,Neutral,UPI Transaction at Aryan genral st
+2025-04-02,PRABHAKAR SHANT,Others,20.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-04-03,Decathlon,Shopping,79.0,Neutral,UPI Transaction at Decathlon
+2025-04-04,Indian Railways,Travel,10.0,Neutral,UPI Transaction at Indian Railways
+2025-04-04,PRABHAKAR SHANT,Others,10.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-04-04,KISHOR CHOUDHAR,Others,20.0,Neutral,UPI Transaction at KISHOR CHOUDHAR
+2025-04-05,MOHAMMAD TAUSIF,Others,20.0,Neutral,UPI Transaction at MOHAMMAD TAUSIF
+2025-04-05,Deepak General,Others,5.0,Neutral,UPI Transaction at Deepak General
+2025-04-05,ASHOK KUMAR PAL,Others,20.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-04-07,TRENT HYPERMARK,Utilities,6.78,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-04-08,VAIBHAV BHUWAL,Income,-500.0,Happy,Salary/Transfer credit
+2025-04-08,VISHAL JAYKUMAR,Others,500.0,Neutral,UPI Transaction at VISHAL JAYKUMAR
+2025-04-09,ASHOK KUMAR PAL,Others,20.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-04-11,Mr ABHISHEK SH,Others,20.0,Neutral,UPI Transaction at Mr ABHISHEK SH
+2025-04-11,Devendra R Pand,Income,-24000.0,Happy,Salary/Transfer credit
+2025-04-11,ASHOK KUMAR PAL,Others,40.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-04-11,DEVENDRA RAMKHE,Others,6111.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-04-11,Amazon Pay,Shopping,1820.0,Regret,UPI Transaction at Amazon Pay
+2025-04-11,Amazon Bill Pay,Shopping,1414.82,Regret,UPI Transaction at Amazon Bill Pay
+2025-04-11,VAIBHAV BHUWAL,Others,500.0,Neutral,UPI Transaction at VAIBHAV BHUWAL
+2025-04-12,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2025-04-12,Aryan genral st,Others,20.0,Neutral,UPI Transaction at Aryan genral st
+2025-04-12,TRIMURTI KIRANA,Shopping,10.0,Neutral,UPI Transaction at TRIMURTI KIRANA
+2025-04-12,JAIKUMAR KUNJBI,Income,-100.0,Happy,Salary/Transfer credit
+2025-04-12,Amazon Pay Bala,Shopping,1025.0,Regret,UPI Transaction at Amazon Pay Bala
+2025-04-12,Amazon Pay Bala,Shopping,100.0,Neutral,UPI Transaction at Amazon Pay Bala
+2025-04-12,ABHISHEK VISHWA,Income,-100.0,Happy,Salary/Transfer credit
+2025-04-12,ABHISHEK VISHWA,Others,100.0,Neutral,UPI Transaction at ABHISHEK VISHWA
+2025-04-12,MUNIB GANGAPRAS,Others,20.0,Neutral,UPI Transaction at MUNIB GANGAPRAS
+2025-04-12,AVENUE SUPERMAR,Shopping,521.0,Neutral,UPI Transaction at AVENUE SUPERMAR
+2025-04-12,PRAVESH DEVENDR,Income,-1125.0,Happy,Salary/Transfer credit
+2025-04-12,CHAGANLAL SOHAN,Others,60.0,Neutral,UPI Transaction at CHAGANLAL SOHAN
+2025-04-13,ANVEYA LIVING P,Others,99.0,Neutral,UPI Transaction at ANVEYA LIVING P
+2025-04-13,CHAGANLAL SOHAN,Others,20.0,Neutral,UPI Transaction at CHAGANLAL SOHAN
+2025-04-14,PERUMAL S,Others,25.0,Neutral,UPI Transaction at PERUMAL S
+2025-04-14,CrossTrek,Others,3600.0,Neutral,UPI Transaction at CrossTrek
+2025-04-14,ASHOK KUMAR PAL,Others,20.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-04-14,Devendra R Pand,Others,8400.0,Neutral,UPI Transaction at Devendra R Pand
+2025-04-15,8104421422@ptye,Others,800.0,Neutral,UPI Transaction at 8104421422@ptye
+2025-04-15,Aryan genral st,Others,30.0,Neutral,UPI Transaction at Aryan genral st
+2025-04-16,Parmeshwar Dhya,Others,10.0,Neutral,UPI Transaction at Parmeshwar Dhya
+2025-04-16,Aryan genral st,Others,20.0,Neutral,UPI Transaction at Aryan genral st
+2025-04-17,SACHIN SURESH S,Others,20.0,Neutral,UPI Transaction at SACHIN SURESH S
+2025-04-17,Mr ABHISHEK SH,Others,20.0,Neutral,UPI Transaction at Mr ABHISHEK SH
+2025-04-18,DEEPAK KUMAR UP,Income,-45000.0,Happy,Salary/Transfer credit
+2025-04-18,DEEPAK KUMAR UP,Income,-45000.0,Happy,Salary/Transfer credit
+2025-04-18,Devendra R Pand,Income,-300.0,Happy,Salary/Transfer credit
+2025-04-18,Ayasha Wo Ali A,Others,100.0,Neutral,UPI Transaction at Ayasha Wo Ali A
+2025-04-18,TRENT HYPERMARK,Utilities,196.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-04-19,MD ISMAIL SHEKH,Others,15.0,Neutral,UPI Transaction at MD ISMAIL SHEKH
+2025-04-22,NACH-MUT-DR-INDIAN CLEARING CORP- 000000,Travel,100.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 000000
+2025-04-24,Mr ABHISHEK SH,Others,40.0,Neutral,UPI Transaction at Mr ABHISHEK SH
+2025-04-25,TRENT HYPERMARK,Utilities,100.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-04-27,ASHOK KUMAR PAL,Others,5.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-04-27,RIKU R MALI,Others,20.0,Neutral,UPI Transaction at RIKU R MALI
+2025-04-27,ASHOK KUMAR PAL,Others,5.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-04-27,ASHOK KUMAR PAL,Others,10.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-04-29,SWEEP TRANSFER TO [4886352054],Others,60000.0,Neutral,UPI Transaction at SWEEP TRANSFER TO [4886352054]
+2025-04-30,JioHotstar,Entertainment,499.0,Neutral,UPI Transaction at JioHotstar
+2025-04-30,Spotify India,Entertainment,1.0,Neutral,UPI Transaction at Spotify India
+2025-05-01,SUMAN KIRAN SIN,Others,50.0,Neutral,UPI Transaction at SUMAN KIRAN SIN
+2025-05-03,UPI_CRADJ_U2_TDT_300425_512065167050_ 02,Income,-1.0,Happy,Salary/Transfer credit
+2025-05-03,Aryan genral st,Others,10.0,Neutral,UPI Transaction at Aryan genral st
+2025-05-03,ASHOK KUMAR PAL,Others,10.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-05-03,DEVENDRA RAMKHE,Income,-4000.0,Happy,Salary/Transfer credit
+2025-05-03,Devendra R Pand,Others,4000.0,Neutral,UPI Transaction at Devendra R Pand
+2025-05-04,PRABHAKAR SHANT,Others,30.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-05-05,Mr ABHISHEK SH,Others,40.0,Neutral,UPI Transaction at Mr ABHISHEK SH
+2025-05-05,MAKWANA MAHENDR,Others,34.0,Neutral,UPI Transaction at MAKWANA MAHENDR
+2025-05-05,Mr ABHISHEK SH,Others,30.0,Neutral,UPI Transaction at Mr ABHISHEK SH
+2025-05-07,PRABHAKAR SHANT,Others,30.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-05-08,TRENT HYPERMARK,Utilities,110.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-05-08,VISHU SHYAMSUND,Others,40.0,Neutral,UPI Transaction at VISHU SHYAMSUND
+2025-05-09,Mr ABHISHEK SH,Others,30.0,Neutral,UPI Transaction at Mr ABHISHEK SH
+2025-05-09,Mr ABHISHEK SH,Others,50.0,Neutral,UPI Transaction at Mr ABHISHEK SH
+2025-05-11,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2025-05-11,SUBHASH BAIJURA,Others,10.0,Neutral,UPI Transaction at SUBHASH BAIJURA
+2025-05-11,Prateek Joshi,Others,38.0,Neutral,UPI Transaction at Prateek Joshi
+2025-05-11,Devendra R Pand,Others,500.0,Neutral,UPI Transaction at Devendra R Pand
+2025-05-11,ABHIMANYU ARJUN,Others,100.0,Neutral,UPI Transaction at ABHIMANYU ARJUN
+2025-05-11,Deepak General,Others,120.0,Neutral,UPI Transaction at Deepak General
+2025-05-11,PRABHAKAR SHANT,Others,20.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-05-12,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-12,Indian Railways,Travel,1870.0,Neutral,UPI Transaction at Indian Railways
+2025-05-13,DIETICO HEALTHF,Health,80.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-13,Amazon Pay,Shopping,2630.0,Regret,UPI Transaction at Amazon Pay
+2025-05-15,ASHOK KUMAR PAL,Others,20.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-05-16,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-16,DIETICO HEALTHF,Health,70.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-17,Aryan genral st,Others,20.0,Neutral,UPI Transaction at Aryan genral st
+2025-05-18,Aryan genral st,Others,20.0,Neutral,UPI Transaction at Aryan genral st
+2025-05-18,Ayasha Wo Ali A,Others,30.0,Neutral,UPI Transaction at Ayasha Wo Ali A
+2025-05-18,AVENUE SUPERMAR,Shopping,5210.5,Neutral,UPI Transaction at AVENUE SUPERMAR
+2025-05-18,Sweep Trf From: 4886352054,Income,-5000.0,Happy,Salary/Transfer credit
+2025-05-18,FD PREMAT PROCEEDS: 4886352054 488635205,Income,-8.0,Happy,Salary/Transfer credit
+2025-05-19,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-19,Devendra R Pand,Others,1000.0,Neutral,UPI Transaction at Devendra R Pand
+2025-05-20,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-20,Devendra R Pand,Others,8000.0,Neutral,UPI Transaction at Devendra R Pand
+2025-05-20,Sweep Trf From: 4886352054,Income,-10000.0,Happy,Salary/Transfer credit
+2025-05-20,FD PREMAT PROCEEDS: 4886352054 488635205,Income,-17.0,Happy,Salary/Transfer credit
+2025-05-21,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-22,NACH-MUT-DR-INDIAN CLEARING CORP- 000000,Travel,100.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 000000
+2025-05-22,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-22,DIETICO HEALTHF,Health,60.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-22,Ayasha Wo Ali A,Others,130.0,Neutral,UPI Transaction at Ayasha Wo Ali A
+2025-05-23,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-23,DIETICO HEALTHF,Health,80.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-23,Ayasha Wo Ali A,Others,24.0,Neutral,UPI Transaction at Ayasha Wo Ali A
+2025-05-23,ASHOK KUMAR PAL,Others,20.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-05-24,TRENT HYPERMARK,Utilities,170.8,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-05-24,KIRANSINGH DALP,Others,75.0,Neutral,UPI Transaction at KIRANSINGH DALP
+2025-05-25,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-05-25,PRABHAKAR SHANT,Others,20.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-05-25,Ashish Ashok Ku,Others,100.0,Neutral,UPI Transaction at Ashish Ashok Ku
+2025-05-25,PRABHAKAR SHANT,Others,16.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-05-25,SAKSHI LOKESH K,Others,60.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-05-25,CHAGANLAL SOHAN,Others,30.0,Neutral,UPI Transaction at CHAGANLAL SOHAN
+2025-05-25,VISHU SHYAMSUND,Others,48.0,Neutral,UPI Transaction at VISHU SHYAMSUND
+2025-05-25,ASHOK KUMAR PAL,Others,40.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-05-26,Devendra R Pand,Others,5000.0,Neutral,UPI Transaction at Devendra R Pand
+2025-05-26,DIETICO HEALTH,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-05-26,DIETICO HEALTHF,Health,80.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-26,DIETICO HEALTHF,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-26,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-05-26,Sweep Trf From: 4886352054,Income,-5000.0,Happy,Salary/Transfer credit
+2025-05-26,FD PREMAT PROCEEDS: 4886352054 488635205,Income,-11.0,Happy,Salary/Transfer credit
+2025-05-27,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-27,DIETICO HEALTHF,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-27,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-05-27,Aryan genral st,Others,36.0,Neutral,UPI Transaction at Aryan genral st
+2025-05-28,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-28,DIETICO HEALTHF,Health,60.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-28,DIETICO HEALTH,Health,10.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-05-28,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-05-29,DIETICO HEALTH,Health,60.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-05-29,JANSEVA GENERIC,Others,100.0,Neutral,UPI Transaction at JANSEVA GENERIC
+2025-05-29,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-05-29,Aryan genral st,Others,30.0,Neutral,UPI Transaction at Aryan genral st
+2025-05-30,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-30,DIETICO HEALTHF,Health,60.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-05-30,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-05-30,PRABHAKAR SHANT,Others,20.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-05-30,ASHOK KUMAR PAL,Others,120.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-05-31,Ayasha Wo Ali A,Others,50.0,Neutral,UPI Transaction at Ayasha Wo Ali A
+2025-05-31,Ayasha Wo Ali A,Others,30.0,Neutral,UPI Transaction at Ayasha Wo Ali A
+2025-05-31,RAHUL PANDEY,Others,25000.0,Neutral,UPI Transaction at RAHUL PANDEY
+2025-05-31,TRENT HYPERMARK,Income,-208.3,Happy,Salary/Transfer credit
+2025-05-31,satyam.neon-1@o,Income,-5000.0,Happy,Salary/Transfer credit
+2025-05-31,Jeevan Sanjeetr,Income,-45.0,Happy,Salary/Transfer credit
+2025-05-31,ASHOK KUMAR PAL,Income,-70.0,Happy,Salary/Transfer credit
+2025-05-31,Sweep Trf From: 4886352054,Income,-30000.0,Happy,Salary/Transfer credit
+2025-05-31,FD PREMAT PROCEEDS: 4886352054 488635205,Income,-86.0,Happy,Salary/Transfer credit
+2025-06-01,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-01,Devendra R Pand,Others,22000.0,Neutral,UPI Transaction at Devendra R Pand
+2025-06-01,Devendra R Pand,Income,-22000.0,Happy,Salary/Transfer credit
+2025-06-01,DEVENDRA RAMKHE,Others,22000.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-06-01,ASHOK KUMAR PAL,Income,-20.0,Happy,Salary/Transfer credit
+2025-06-01,VISHU SHYAMSUND,Income,-48.0,Happy,Salary/Transfer credit
+2025-06-01,Aryan genral st,Income,-20.0,Happy,Salary/Transfer credit
+2025-06-01,Sweep Trf From: 4886352054,Income,-10000.0,Happy,Salary/Transfer credit
+2025-06-01,FD PREMAT PROCEEDS: 4886352054 488635205,Income,-29.0,Happy,Salary/Transfer credit
+2025-06-02,DIETICO HEALTHF,Health,20.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-02,DIETICO HEALTH,Health,80.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-02,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-03,DIETICO HEALTHF,Health,60.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-03,DIETICO HEALTHF,Health,10.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-03,DIETICO HEALTHF,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-03,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-03,PRABHAKAR SHANT,Others,10.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-06-03,PRABHAKAR SHANT,Others,50.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-06-04,DIETICO HEALTHF,Health,80.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-04,DIETICO HEALTH,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-04,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-04,ASHOK KUMAR PAL,Others,20.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-06-05,DIETICO HEALTH,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-05,DIETICO HEALTHF,Health,80.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-05,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-06,vikasharajbhar-,Others,15.0,Neutral,UPI Transaction at vikasharajbhar-
+2025-06-06,DIETICO HEALTHF,Health,35.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-06,DIETICO HEALTHF,Health,70.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-06,TRENT HYPERMARK,Utilities,88.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-06-06,Decathlon,Shopping,599.0,Regret,UPI Transaction at Decathlon
+2025-06-06,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-06,ASHOK KUMAR PAL,Others,40.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-06-07,JEDEN THE CAKE,Others,200.0,Neutral,UPI Transaction at JEDEN THE CAKE
+2025-06-07,DWARKA VEG DELI,Food,210.0,Neutral,UPI Transaction at DWARKA VEG DELI
+2025-06-07,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-07,ASHOK KUMAR PAL,Others,20.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-06-07,PRABHAKAR SHANT,Others,20.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-06-07,PRABHAKAR SHANT,Others,10.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-06-08,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-08,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-08,SAKSHI LOKESH K,Others,30.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-08,Aryan genral st,Others,18.0,Neutral,UPI Transaction at Aryan genral st
+2025-06-08,VISHU SHYAMSUND,Others,40.0,Neutral,UPI Transaction at VISHU SHYAMSUND
+2025-06-08,ASHOK KUMAR PAL,Others,20.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-06-09,DIETICO HEALTH,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-09,DIETICO HEALTHF,Health,70.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-09,DIETICO HEALTH,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-09,STAR BAZAAR,Shopping,153.0,Neutral,UPI Transaction at STAR BAZAAR
+2025-06-09,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-10,DIETICO HEALTH,Health,35.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-10,DIETICO HEALTH,Health,80.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-10,DIETICO HEALTH,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-10,NEFT ICIN416155594447 THINKPARMS INFOTEC,Income,-9683.0,Happy,Salary/Transfer credit
+2025-06-10,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-11,Amazon India,Shopping,3253.0,Regret,UPI Transaction at Amazon India
+2025-06-11,NACH-10-CR-TRIDENT LIMITED- 000000000000,Income,-1.0,Happy,Salary/Transfer credit
+2025-06-11,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-11,DIETICO HEALTHF,Health,70.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-11,DIETICO HEALTHF,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-11,SAKSHI LOKESH K,Others,45.0,Neutral,UPI Transaction at SAKSHI LOKESH K
+2025-06-12,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-12,DIETICO HEALTH,Health,70.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-12,DIETICO HEALTHF,Health,10.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-12,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2025-06-12,Aryan genral st,Others,30.0,Neutral,UPI Transaction at Aryan genral st
+2025-06-12,Amazon Pay,Shopping,2080.0,Regret,UPI Transaction at Amazon Pay
+2025-06-13,Mr Rehmat Ali,Others,30.0,Neutral,UPI Transaction at Mr Rehmat Ali
+2025-06-13,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-13,DIETICO HEALTHF,Health,80.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-13,Indian Railways,Travel,1870.0,Neutral,UPI Transaction at Indian Railways
+2025-06-13,ASHOK KUMAR PAL,Others,40.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-06-13,Devendra R Pand,Others,7500.0,Neutral,UPI Transaction at Devendra R Pand
+2025-06-14,POONAM HARISHCH,Others,100.0,Neutral,UPI Transaction at POONAM HARISHCH
+2025-06-14,Radha Narayanla,Others,25.0,Neutral,UPI Transaction at Radha Narayanla
+2025-06-14,SUSHIL R SINGH,Others,5.0,Neutral,UPI Transaction at SUSHIL R SINGH
+2025-06-16,DIETICO HEALTH,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-16,DIETICO HEALTH,Health,70.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-16,Abhishek Rajbah,Income,-400.0,Happy,Salary/Transfer credit
+2025-06-16,DIETICO HEALTHF,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-17,DIETICO HEALTH,Health,35.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-17,DIETICO HEALTHF,Health,80.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-17,Aryan genral st,Others,40.0,Neutral,UPI Transaction at Aryan genral st
+2025-06-18,DIETICO HEALTH,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-18,DIETICO HEALTHF,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-18,NANDU KAILASH P,Income,-2500.0,Happy,Salary/Transfer credit
+2025-06-19,DIETICO HEALTH,Health,50.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-06-19,Mrs Vinitta Sun,Others,2600.0,Neutral,UPI Transaction at Mrs Vinitta Sun
+2025-06-19,DIETICO HEALTHF,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-20,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-20,DIETICO HEALTHF,Health,70.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-20,DIETICO HEALTHF,Health,10.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-20,KIRANSINGH DALP,Others,75.0,Neutral,UPI Transaction at KIRANSINGH DALP
+2025-06-20,ASHOK KUMAR PAL,Others,50.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-06-22,NACH-MUT-DR-INDIAN CLEARING CORP- 0000FX,Travel,100.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 0000FX
+2025-06-22,Devendra R Pand,Income,-2000.0,Happy,Salary/Transfer credit
+2025-06-22,AVENUE SUPERMAR,Shopping,1580.5,Neutral,UPI Transaction at AVENUE SUPERMAR
+2025-06-22,rajudamore1231o,Others,20.0,Neutral,UPI Transaction at rajudamore1231o
+2025-06-23,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-24,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-25,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-25,CMH,Others,20.0,Neutral,UPI Transaction at CMH
+2025-06-26,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-26,SANJAY MOTIRAM,Others,30.0,Neutral,UPI Transaction at SANJAY MOTIRAM
+2025-06-27,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-28,Devendra R Pand,Income,-21500.0,Happy,Salary/Transfer credit
+2025-06-28,DEVENDRA RAMKHE,Others,21500.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-06-28,CHAGANLAL SOHAN,Others,40.0,Neutral,UPI Transaction at CHAGANLAL SOHAN
+2025-06-30,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-30,DIETICO HEALTHF,Health,10.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-30,DIETICO HEALTHF,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-06-30,Int.Pd:3546287720:01-04-2025 to 30-06-20,Income,-154.0,Happy,Salary/Transfer credit
+2025-07-01,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-01,DIETICO HEALTHF,Health,60.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-01,DIETICO HEALTHF,Health,5.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-02,DIETICO HEALTHF,Health,50.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-03,VISHU SHYAMSUND,Others,16.0,Neutral,UPI Transaction at VISHU SHYAMSUND
+2025-07-04,DIETICO HEALTHF,Health,70.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-05,pankajyadav8187,Others,15.0,Neutral,UPI Transaction at pankajyadav8187
+2025-07-07,DIETICO HEALTHF,Health,10.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-10,NEFT ICIN419159332163 THINKPARMS INFOTEC,Income,-14583.0,Happy,Salary/Transfer credit
+2025-07-10,NANDU KAILASH P,Others,2500.0,Neutral,UPI Transaction at NANDU KAILASH P
+2025-07-11,ASHOK KUMAR PAL,Others,30.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-07-11,Devendra R Pand,Others,8000.0,Neutral,UPI Transaction at Devendra R Pand
+2025-07-12,SUMAN SURESH RO,Others,540.0,Neutral,UPI Transaction at SUMAN SURESH RO
+2025-07-12,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2025-07-12,WELLNESS FOREVE,Others,580.49,Neutral,UPI Transaction at WELLNESS FOREVE
+2025-07-12,Decathlon,Shopping,678.0,Regret,UPI Transaction at Decathlon
+2025-07-13,IRCTC UTS,Travel,825.0,Neutral,UPI Transaction at IRCTC UTS
+2025-07-13,ASHOK KUMAR PAL,Others,75.0,Neutral,UPI Transaction at ASHOK KUMAR PAL
+2025-07-14,Mr Rehmat Ali,Others,30.0,Neutral,UPI Transaction at Mr Rehmat Ali
+2025-07-15,DIETICO HEALTH,Health,60.0,Neutral,UPI Transaction at DIETICO HEALTH
+2025-07-15,DIETICO HEALTHF,Health,10.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-15,Devendra R Pand,Income,-1500.0,Happy,Salary/Transfer credit
+2025-07-16,DIETICO HEALTHF,Health,30.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-16,DIETICO HEALTHF,Health,60.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-16,Dominos Pizza,Food,611.1,Regret,UPI Transaction at Dominos Pizza
+2025-07-16,ATUL SURESH SIN,Others,35.0,Neutral,UPI Transaction at ATUL SURESH SIN
+2025-07-17,DIETICO HEALTHF,Health,10.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-17,DIETICO HEALTHF,Health,60.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-17,Devendra R Pand,Income,-500.0,Happy,Salary/Transfer credit
+2025-07-17,Burger King Ind,Food,713.96,Neutral,UPI Transaction at Burger King Ind
+2025-07-20,Devendra R Pand,Income,-2702.0,Happy,Salary/Transfer credit
+2025-07-20,Amazon Pay,Shopping,2669.0,Regret,UPI Transaction at Amazon Pay
+2025-07-21,JAPAM,Others,49.0,Neutral,UPI Transaction at JAPAM
+2025-07-22,NACH-MUT-DR-INDIAN CLEARING CORP- 00004K,Travel,100.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 00004K
+2025-07-22,DEVENDRA R PAND,Others,100.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-07-22,Devendra R Pand,Income,-1032.0,Happy,Salary/Transfer credit
+2025-07-22,Zepto Marketpla,Shopping,571.92,Neutral,UPI Transaction at Zepto Marketpla
+2025-07-22,GANGA LALARAM C,Others,100.0,Neutral,UPI Transaction at GANGA LALARAM C
+2025-07-22,Google Play,Entertainment,2.0,Neutral,UPI Transaction at Google Play
+2025-07-22,Google Pay,Income,-2.0,Happy,Salary/Transfer credit
+2025-07-23,Bewakoof Brands,Others,398.0,Neutral,UPI Transaction at Bewakoof Brands
+2025-07-23,Amazon Pay on D,Shopping,532.0,Regret,UPI Transaction at Amazon Pay on D
+2025-07-23,Devendra R Pand,Income,-230.0,Happy,Salary/Transfer credit
+2025-07-24,Aryan genral st,Others,20.0,Neutral,UPI Transaction at Aryan genral st
+2025-07-24,Aryan genral st,Others,100.0,Neutral,UPI Transaction at Aryan genral st
+2025-07-25,Devendra R Pand,Income,-1.0,Happy,Salary/Transfer credit
+2025-07-26,Devendra R Pand,Income,-150.0,Happy,Salary/Transfer credit
+2025-07-26,Zepto Marketpla,Shopping,117.0,Neutral,UPI Transaction at Zepto Marketpla
+2025-07-26,ABHISHANT TIWAR,Others,174.0,Neutral,UPI Transaction at ABHISHANT TIWAR
+2025-07-26,NISHAN KASHINAT,Income,-30.0,Happy,Salary/Transfer credit
+2025-07-27,ATUL SURESH SIN,Others,40.0,Neutral,UPI Transaction at ATUL SURESH SIN
+2025-07-27,Zepto,Shopping,230.0,Neutral,UPI Transaction at Zepto
+2025-07-28,Devendra R Pand,Income,-350.0,Happy,Salary/Transfer credit
+2025-07-28,FARIDA SUFIZHEI,Others,500.0,Neutral,UPI Transaction at FARIDA SUFIZHEI
+2025-07-29,DIETICO HEALTHF,Health,40.0,Neutral,UPI Transaction at DIETICO HEALTHF
+2025-07-30,Devendra R Pand,Income,-100.0,Happy,Salary/Transfer credit
+2025-07-30,PRABHAKAR SHANT,Others,30.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-07-30,Devendra R Pand,Income,-200.0,Happy,Salary/Transfer credit
+2025-07-30,TRENT HYPERMARK,Utilities,218.45,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-07-31,SAMAUN SHEKH,Others,80.0,Neutral,UPI Transaction at SAMAUN SHEKH
+2025-08-02,Devendra R Pand,Income,-500.0,Happy,Salary/Transfer credit
+2025-08-02,JioHotstar,Entertainment,499.0,Neutral,UPI Transaction at JioHotstar
+2025-08-03,Aryan genral st,Others,30.0,Neutral,UPI Transaction at Aryan genral st
+2025-08-03,Devendra R Pand,Income,-100.0,Happy,Salary/Transfer credit
+2025-08-07,DEVENDRA R PAND,Income,-999.0,Happy,Salary/Transfer credit
+2025-08-07,Bewakoof Brands,Others,499.0,Neutral,UPI Transaction at Bewakoof Brands
+2025-08-08,NEFT ICIN422052300836 THINKPARMS INFOTEC,Income,-11659.0,Happy,Salary/Transfer credit
+2025-08-08,Big Boss Unisex,Others,150.0,Neutral,UPI Transaction at Big Boss Unisex
+2025-08-08,Devendra R Pand,Income,-20000.0,Happy,Salary/Transfer credit
+2025-08-08,DEVENDRA RAMKHE,Others,20000.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-08-08,NEFT SBIN325220397697 EMPLOYEE PROVIDENT,Income,-2000.0,Happy,Salary/Transfer credit
+2025-08-09,JAYA GENRAL STO,Others,500.0,Neutral,UPI Transaction at JAYA GENRAL STO
+2025-08-09,Aryan genral st,Others,500.0,Neutral,UPI Transaction at Aryan genral st
+2025-08-10,Devendra R Pand,Others,2000.0,Neutral,UPI Transaction at Devendra R Pand
+2025-08-10,Decathlon,Shopping,799.0,Regret,UPI Transaction at Decathlon
+2025-08-10,GOOGLE INDIA DI,Income,-6.0,Happy,Salary/Transfer credit
+2025-08-11,SUSHIL R SINGH,Others,215.0,Neutral,UPI Transaction at SUSHIL R SINGH
+2025-08-11,RAMESHKUMAR NAI,Others,500.0,Neutral,UPI Transaction at RAMESHKUMAR NAI
+2025-08-11,Samrat Jeweller,Others,3600.0,Neutral,UPI Transaction at Samrat Jeweller
+2025-08-12,Devendra R Pand,Income,-740.0,Happy,Salary/Transfer credit
+2025-08-12,DEVENDRA RAMKHE,Others,740.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-08-12,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-13,KISHOR CHOUDHAR,Others,259.0,Neutral,UPI Transaction at KISHOR CHOUDHAR
+2025-08-14,RIKU R MALI,Others,60.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-14,RIKU R MALI,Others,20.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-14,MR KISHOR CHOU,Others,200.0,Neutral,UPI Transaction at MR KISHOR CHOU
+2025-08-15,Pravesh Nishad,Others,80.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-08-17,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-17,PRABHAKAR SHANT,Others,50.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-08-18,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-18,TRENT HYPERMARK,Utilities,456.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-08-19,ABHISHEK SHIVMA,Others,300.0,Neutral,UPI Transaction at ABHISHEK SHIVMA
+2025-08-20,TRENT HYPERMARK,Utilities,469.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-08-20,Devendra R Pand,Income,-3000.0,Happy,Salary/Transfer credit
+2025-08-20,DEVENDRA R PAND,Others,2500.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-08-21,Xpressbees,Others,3357.0,Neutral,UPI Transaction at Xpressbees
+2025-08-21,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-22,NACH-MUT-DR-INDIAN CLEARING CORP- 0000A4,Travel,100.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 0000A4
+2025-08-22,Pravesh Nishad,Others,70.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-08-22,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-22,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-23,Pravesh Nishad,Others,70.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-08-23,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-24,Pravesh Nishad,Others,140.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-08-24,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-24,JAYA GENRAL STO,Others,110.0,Neutral,UPI Transaction at JAYA GENRAL STO
+2025-08-30,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-08-30,SUPREME HEALTH,Health,100.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-08-31,Devendra R Pand,Income,-650.0,Happy,Salary/Transfer credit
+2025-08-31,TRENT HYPERMARK,Utilities,733.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-08-31,SAMECHA RAVI MA,Others,35.0,Neutral,UPI Transaction at SAMECHA RAVI MA
+2025-09-01,Devendra R Pand,Income,-500.0,Happy,Salary/Transfer credit
+2025-09-02,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-09-02,Aryan genral st,Others,40.0,Neutral,UPI Transaction at Aryan genral st
+2025-09-03,SPOTIFY,Entertainment,69.0,Neutral,UPI Transaction at SPOTIFY
+2025-09-03,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-09-03,DEVENDRA R PAND,Income,-400.0,Happy,Salary/Transfer credit
+2025-09-03,TRENT HYPERMARK,Utilities,384.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-09-04,DEVENDRA R PAND,Income,-3000.0,Happy,Salary/Transfer credit
+2025-09-04,Jay maa durge j,Others,40.0,Neutral,UPI Transaction at Jay maa durge j
+2025-09-05,Bhaktivedanta 2,Others,1200.0,Neutral,UPI Transaction at Bhaktivedanta 2
+2025-09-05,THE PAREL CHEMI,Others,1134.0,Neutral,UPI Transaction at THE PAREL CHEMI
+2025-09-06,ANGAL IDLI DOSA,Others,180.0,Neutral,UPI Transaction at ANGAL IDLI DOSA
+2025-09-06,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-06,Aryan genral st,Others,20.0,Neutral,UPI Transaction at Aryan genral st
+2025-09-06,HIRALAL FRUITS,Others,20.0,Neutral,UPI Transaction at HIRALAL FRUITS
+2025-09-07,RIKU R MALI,Others,30.0,Neutral,UPI Transaction at RIKU R MALI
+2025-09-07,JAYA GENERAL ST,Others,20.0,Neutral,UPI Transaction at JAYA GENERAL ST
+2025-09-08,Amazon Pay,Shopping,200.0,Neutral,UPI Transaction at Amazon Pay
+2025-09-08,Devendra R Pand,Income,-4000.0,Happy,Salary/Transfer credit
+2025-09-08,DEVENDRA R PAND,Income,-1000.0,Happy,Salary/Transfer credit
+2025-09-08,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-08,AVENUE SUPERMAR,Shopping,4356.1,Neutral,UPI Transaction at AVENUE SUPERMAR
+2025-09-09,NEFT ICIN225204283448 LLOYDS ENGINEERING,Income,-0.5,Happy,Salary/Transfer credit
+2025-09-09,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-10,DEVENDRA R PAND,Income,-21000.0,Happy,Salary/Transfer credit
+2025-09-10,DEVENDRA RAMKHE,Others,21000.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-09-10,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-10,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2025-09-10,TATA SKY LIMITE,Utilities,200.0,Neutral,UPI Transaction at TATA SKY LIMITE
+2025-09-10,DEVENDRA R PAND,Income,-4000.0,Happy,Salary/Transfer credit
+2025-09-10,Devendra R Pand,Others,4000.0,Neutral,UPI Transaction at Devendra R Pand
+2025-09-11,GOOGLE INDIA DI,Income,-6.0,Happy,Salary/Transfer credit
+2025-09-11,Devendra R Pand,Income,-700.0,Happy,Salary/Transfer credit
+2025-09-11,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-11,TRENT HYPERMARK,Utilities,879.65,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-09-12,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-12,ARBUDA SPORTS,Others,165.0,Neutral,UPI Transaction at ARBUDA SPORTS
+2025-09-12,Devendra R Pand,Income,-28000.0,Happy,Salary/Transfer credit
+2025-09-12,DEVENDRA R PAND,Others,28000.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-09-13,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-13,SUPREME HEALTH,Health,143.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-09-13,JAYA GENRAL STO,Others,10.0,Neutral,UPI Transaction at JAYA GENRAL STO
+2025-09-13,Devendra R Pand,Income,-1000.0,Happy,Salary/Transfer credit
+2025-09-13,GUPTA SURENDRAP,Others,70.0,Neutral,UPI Transaction at GUPTA SURENDRAP
+2025-09-14,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-15,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-15,Devendra R Pand,Income,-3000.0,Happy,Salary/Transfer credit
+2025-09-15,DEVENDRA R PAND,Others,3000.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-09-16,Zepto Marketpla,Shopping,103.0,Neutral,UPI Transaction at Zepto Marketpla
+2025-09-16,Zepto Marketpla,Shopping,99.0,Neutral,UPI Transaction at Zepto Marketpla
+2025-09-16,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-16,Google India Se,Others,10.0,Neutral,UPI Transaction at Google India Se
+2025-09-17,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-18,NACH-ECS-CR-RAIL VIKAS NIGAM LIM-1297552,Income,-1.72,Happy,Salary/Transfer credit
+2025-09-18,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-19,VAIBHAV BHUWAL,Others,100.0,Neutral,UPI Transaction at VAIBHAV BHUWAL
+2025-09-19,VAIBHAV BHUWAL,Others,350.0,Neutral,UPI Transaction at VAIBHAV BHUWAL
+2025-09-19,REV-UPI/VAIBHAV BHUWA/562840309182/UPI U,Income,-100.0,Happy,Salary/Transfer credit
+2025-09-19,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-20,Devendra R Pand,Income,-2500.0,Happy,Salary/Transfer credit
+2025-09-20,Zepto,Shopping,203.0,Neutral,UPI Transaction at Zepto
+2025-09-20,Vishal Jaykumar,Others,500.0,Neutral,UPI Transaction at Vishal Jaykumar
+2025-09-20,Radha Narayanla,Others,15.0,Neutral,UPI Transaction at Radha Narayanla
+2025-09-20,Zepto,Shopping,106.0,Neutral,UPI Transaction at Zepto
+2025-09-21,MARTYEAR TECHNO,Others,80.0,Neutral,UPI Transaction at MARTYEAR TECHNO
+2025-09-21,TRENT HYPERMARK,Utilities,644.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-09-22,NACH-MUT-DR-INDIAN CLEARING CORP- 0000N9,Travel,100.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 0000N9
+2025-09-22,DEVENDRA R PAND,Others,700.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-09-22,NEFT SBIN325265364788 EMPLOYEE NEFTINW-1,Income,-1000.0,Happy,Salary/Transfer credit
+2025-09-23,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-23,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-24,DEVENDRA R PAND,Others,300.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-09-25,Google Play,Entertainment,199.0,Neutral,UPI Transaction at Google Play
+2025-09-25,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-25,Surendra shivmu,Others,30.0,Neutral,UPI Transaction at Surendra shivmu
+2025-09-25,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-26,Devendra R Pand,Income,-1700.0,Happy,Salary/Transfer credit
+2025-09-26,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-26,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-26,JAYA GENRAL STO,Others,60.0,Neutral,UPI Transaction at JAYA GENRAL STO
+2025-09-27,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-28,Devendra R Pand,Income,-800.0,Happy,Salary/Transfer credit
+2025-09-28,TRENT HYPERMARK,Utilities,1917.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-09-29,EKART,Others,313.0,Neutral,UPI Transaction at EKART
+2025-09-29,TRENT HYPERMARK,Utilities,122.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-09-29,Devendra R Pand,Income,-500.0,Happy,Salary/Transfer credit
+2025-09-29,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-29,HIMANSHUHARDWAR,Others,110.0,Neutral,UPI Transaction at HIMANSHUHARDWAR
+2025-09-29,Deepak General,Others,123.0,Neutral,UPI Transaction at Deepak General
+2025-09-29,TRENT HYPERMARK,Utilities,60.06,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-09-30,CHAGANLAL SOHAN,Others,35.0,Neutral,UPI Transaction at CHAGANLAL SOHAN
+2025-09-30,Mr ROSHAN GUP,Others,110.0,Neutral,UPI Transaction at Mr ROSHAN GUP
+2025-09-30,Vinita Collecti,Others,730.0,Neutral,UPI Transaction at Vinita Collecti
+2025-09-30,YADAV V,Income,-300.0,Happy,Salary/Transfer credit
+2025-09-30,Devendra R Pand,Income,-1000.0,Happy,Salary/Transfer credit
+2025-09-30,Sakshi Lokesh K,Others,90.0,Neutral,UPI Transaction at Sakshi Lokesh K
+2025-09-30,CHANDA AVDHESH,Others,10.0,Neutral,UPI Transaction at CHANDA AVDHESH
+2025-09-30,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-30,Deepak General,Others,25.0,Neutral,UPI Transaction at Deepak General
+2025-09-30,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-09-30,PRABHAKAR SHANT,Others,60.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-09-30,SATYANARAYAN RA,Others,30.0,Neutral,UPI Transaction at SATYANARAYAN RA
+2025-09-30,Int.Pd:3546287720:01-07-2025 to 30-09-20,Income,-13.0,Happy,Salary/Transfer credit
+2025-10-01,Devendra R Pand,Income,-2000.0,Happy,Salary/Transfer credit
+2025-10-01,Mr ARVIND KUMAR,Others,2000.0,Neutral,UPI Transaction at Mr ARVIND KUMAR
+2025-10-01,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-01,Surendra shivmu,Others,30.0,Neutral,UPI Transaction at Surendra shivmu
+2025-10-01,SUPREME HEALTH,Health,110.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-10-02,TRENT HYPERMARK,Utilities,109.3,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-10-03,SPOTIFY,Entertainment,69.0,Neutral,UPI Transaction at SPOTIFY
+2025-10-03,The beauty bar,Others,100.0,Neutral,UPI Transaction at The beauty bar
+2025-10-03,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-03,ARBUDA SPORTS,Others,75.0,Neutral,UPI Transaction at ARBUDA SPORTS
+2025-10-04,GANGA LALARAM C,Others,100.0,Neutral,UPI Transaction at GANGA LALARAM C
+2025-10-04,Radha Narayanla,Others,100.0,Neutral,UPI Transaction at Radha Narayanla
+2025-10-05,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-06,NEFT HDFCH00526285963 JM FINANCIAL MUTUA,Income,-1000.0,Happy,Salary/Transfer credit
+2025-10-06,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-07,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-07,TRENT HYPERMARK,Utilities,167.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-10-08,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-08,Devendra R Pand,Income,-1300.0,Happy,Salary/Transfer credit
+2025-10-08,Devendra R Pand,Income,-4500.0,Happy,Salary/Transfer credit
+2025-10-08,DEVENDRA R PAND,Others,4500.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-10-09,DMART AVENUE SU,Others,1384.5,Neutral,UPI Transaction at DMART AVENUE SU
+2025-10-10,DEVENDRA R PAND,Income,-1000.0,Happy,Salary/Transfer credit
+2025-10-10,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2025-10-10,DEVENDRA R PAND,Income,-20000.0,Happy,Salary/Transfer credit
+2025-10-10,DEVENDRA RAMKHE,Others,20000.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-10-10,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-11,DEVENDRA R PAND,Income,-5000.0,Happy,Salary/Transfer credit
+2025-10-11,Amazon Pay,Shopping,1530.0,Regret,UPI Transaction at Amazon Pay
+2025-10-11,DEVENDRA R PAND,Income,-1500.0,Happy,Salary/Transfer credit
+2025-10-11,DMART AVENUE SU,Others,4780.09,Neutral,UPI Transaction at DMART AVENUE SU
+2025-10-11,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-11,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-12,Decathlon,Shopping,99.0,Neutral,UPI Transaction at Decathlon
+2025-10-12,Deepak General,Others,45.0,Neutral,UPI Transaction at Deepak General
+2025-10-12,DEVENDRA R PAND,Income,-760.0,Happy,Salary/Transfer credit
+2025-10-12,DEVENDRA R PAND,Others,760.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-10-12,DEVENDRA R PAND,Income,-760.0,Happy,Salary/Transfer credit
+2025-10-12,DEVENDRA RAMKHE,Others,760.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-10-13,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-14,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-14,SUPREME HEALTH,Health,50.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-10-15,Devendra R Pand,Income,-5000.0,Happy,Salary/Transfer credit
+2025-10-15,EKART,Others,632.0,Neutral,UPI Transaction at EKART
+2025-10-15,HEMANT ANNI POO,Others,506.0,Neutral,UPI Transaction at HEMANT ANNI POO
+2025-10-15,DMART AVENUE SU,Others,994.5,Neutral,UPI Transaction at DMART AVENUE SU
+2025-10-15,TRENT HYPERMARK,Utilities,299.04,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-10-16,SUPREME HEALTH,Health,145.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-10-17,TRENT HYPERMARK,Utilities,400.75,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-10-17,anitasgupta283-,Others,100.0,Neutral,UPI Transaction at anitasgupta283-
+2025-10-17,KHATUN AFSARI S,Others,70.0,Neutral,UPI Transaction at KHATUN AFSARI S
+2025-10-17,CHANDRESH KUMAR,Others,10.0,Neutral,UPI Transaction at CHANDRESH KUMAR
+2025-10-17,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-17,KALE NAMDEV GAN,Others,120.0,Neutral,UPI Transaction at KALE NAMDEV GAN
+2025-10-17,TRENT HYPERMARK,Utilities,29.75,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-10-17,EKART,Others,306.0,Neutral,UPI Transaction at EKART
+2025-10-18,PRABHAKAR SHANT,Others,50.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-10-18,RIKU R MALI,Others,60.0,Neutral,UPI Transaction at RIKU R MALI
+2025-10-18,AMBARISH TIWARI,Income,-60.0,Happy,Salary/Transfer credit
+2025-10-18,ANITA SHANKAR G,Others,20.0,Neutral,UPI Transaction at ANITA SHANKAR G
+2025-10-18,DMART AVENUE SU,Others,185.0,Neutral,UPI Transaction at DMART AVENUE SU
+2025-10-18,PRABHAKAR SHANT,Others,100.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-10-19,RAHUL RAMDARASH,Income,-12500.0,Happy,Salary/Transfer credit
+2025-10-19,PRABHAKAR SHANT,Others,24.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-10-19,SUPREME HEALTH,Health,50.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-10-19,SUPREME HEALTH,Health,20.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-10-19,Seema Devi,Others,10.0,Neutral,UPI Transaction at Seema Devi
+2025-10-19,TRENT HYPERMARK,Utilities,1543.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-10-19,SATISH MANOJ GU,Others,700.0,Neutral,UPI Transaction at SATISH MANOJ GU
+2025-10-19,Nitin Shashikan,Others,300.0,Neutral,UPI Transaction at Nitin Shashikan
+2025-10-19,JAYA GENRAL STO,Others,45.0,Neutral,UPI Transaction at JAYA GENRAL STO
+2025-10-19,JAYA GENRAL STO,Others,10.0,Neutral,UPI Transaction at JAYA GENRAL STO
+2025-10-19,DEVENDRA R PAND,Others,11500.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-10-20,CHAGANLAL SOHAN,Others,50.0,Neutral,UPI Transaction at CHAGANLAL SOHAN
+2025-10-21,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-21,SUPREME HEALTH,Health,50.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-10-22,NACH-MUT-DR-INDIAN CLEARING CORP- 0000MM,Travel,100.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 0000MM
+2025-10-22,DEVENDRA R PAND,Income,-160.0,Happy,Salary/Transfer credit
+2025-10-22,Pravesh Nishad,Others,70.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-22,Sakshi Lokesh K,Others,90.0,Neutral,UPI Transaction at Sakshi Lokesh K
+2025-10-22,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-23,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-23,SUPREME HEALTH,Health,50.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-10-24,DEVENDRA R PAND,Income,-570.0,Happy,Salary/Transfer credit
+2025-10-24,CHETAN RAMESH L,Others,539.0,Neutral,UPI Transaction at CHETAN RAMESH L
+2025-10-25,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-25,RAJKUMARSOMUNEE,Others,10.0,Neutral,UPI Transaction at RAJKUMARSOMUNEE
+2025-10-25,SUPREME HEALTH,Health,50.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-10-27,NITIN KAMALAPRA,Income,-40000.0,Happy,Salary/Transfer credit
+2025-10-27,KOIL SHARMA,Income,-18000.0,Happy,Salary/Transfer credit
+2025-10-27,SWEEP TRANSFER TO [4896761812],Others,5000.0,Neutral,UPI Transaction at SWEEP TRANSFER TO [4896761812]
+2025-10-28,Rajput Chetnabe,Others,9.0,Neutral,UPI Transaction at Rajput Chetnabe
+2025-10-28,THAKUR COLLEGE,Others,50000.0,Neutral,UPI Transaction at THAKUR COLLEGE
+2025-10-28,Jeevan Sanjeetr,Others,50.0,Neutral,UPI Transaction at Jeevan Sanjeetr
+2025-10-28,Sweep Trf From: 4896761812,Income,-5000.0,Happy,Salary/Transfer credit
+2025-10-29,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-29,TRENT HYPERMARK,Utilities,135.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-10-30,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-10-30,PATHAK GOVIND R,Others,80.0,Neutral,UPI Transaction at PATHAK GOVIND R
+2025-10-30,MALI DASHRATH B,Others,70.0,Neutral,UPI Transaction at MALI DASHRATH B
+2025-10-31,DEVENDRA R PAND,Others,1000.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-10-31,Swiggy,Food,597.0,Regret,UPI Transaction at Swiggy
+2025-10-31,DEVENDRA R PAND,Others,5000.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-11-01,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-02,ROHITSURENDRAYA,Others,12.0,Neutral,UPI Transaction at ROHITSURENDRAYA
+2025-11-02,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-02,SUPREME HEALTH,Health,100.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-11-03,SPOTIFY,Entertainment,69.0,Neutral,UPI Transaction at SPOTIFY
+2025-11-03,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-04,UIDAI,Others,75.0,Neutral,UPI Transaction at UIDAI
+2025-11-04,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-05,TRENT HYPERMARK,Utilities,140.0,Neutral,UPI Transaction at TRENT HYPERMARK
+2025-11-05,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-05,Devendra R Pand,Income,-21000.0,Happy,Salary/Transfer credit
+2025-11-05,DEVENDRA RAMKHE,Others,21000.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-11-05,Devendra R Pand,Income,-4000.0,Happy,Salary/Transfer credit
+2025-11-05,DEVENDRA R PAND,Others,4000.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-11-06,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-07,Rajput Chetnabe,Others,18.0,Neutral,UPI Transaction at Rajput Chetnabe
+2025-11-07,Rajput Chetnabe,Others,99.0,Neutral,UPI Transaction at Rajput Chetnabe
+2025-11-08,Indian Railways,Travel,10.0,Neutral,UPI Transaction at Indian Railways
+2025-11-08,Indian Railways,Travel,300.0,Neutral,UPI Transaction at Indian Railways
+2025-11-08,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-08,AMBARISH TIWARI,Income,-75.0,Happy,Salary/Transfer credit
+2025-11-09,DEVENDRA R PAND,Income,-500.0,Happy,Salary/Transfer credit
+2025-11-09,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2025-11-09,SUPREME HEALTH,Health,50.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-11-10,Devendra R Pand,Income,-7500.0,Happy,Salary/Transfer credit
+2025-11-10,DEVENDRA R PAND,Others,7500.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-11-10,RAVINDRA UTTAM,Income,-20.0,Happy,Salary/Transfer credit
+2025-11-12,DEVENDRA R PAND,Income,-3000.0,Happy,Salary/Transfer credit
+2025-11-12,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-13,DEVENDRA R PAND,Income,-6000.0,Happy,Salary/Transfer credit
+2025-11-13,DMART AVENUE SU,Others,6371.26,Neutral,UPI Transaction at DMART AVENUE SU
+2025-11-13,Mr MAHESH SURES,Others,60.0,Neutral,UPI Transaction at Mr MAHESH SURES
+2025-11-13,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-13,Baba Khaugali,Others,100.0,Neutral,UPI Transaction at Baba Khaugali
+2025-11-14,SUPREME HEALTH,Health,50.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-11-14,The beauty bar,Others,100.0,Neutral,UPI Transaction at The beauty bar
+2025-11-14,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-14,Amazon Pay,Shopping,408.0,Neutral,UPI Transaction at Amazon Pay
+2025-11-14,Anita Devi Anil,Others,228.0,Neutral,UPI Transaction at Anita Devi Anil
+2025-11-14,DEVENDRA R PAND,Income,-775.0,Happy,Salary/Transfer credit
+2025-11-14,DEVENDRA RAMKHE,Others,775.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-11-15,DEVENDRA RAMKHE,Income,-9800.0,Happy,Salary/Transfer credit
+2025-11-15,DEVENDRA R PAND,Others,9800.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-11-15,VAIBHAV BHUWAL,Income,-400.0,Happy,Salary/Transfer credit
+2025-11-15,SUMAN KIRAN SIN,Others,600.0,Neutral,UPI Transaction at SUMAN KIRAN SIN
+2025-11-15,Radha Narayanla,Others,15.0,Neutral,UPI Transaction at Radha Narayanla
+2025-11-16,MOHD MUSTAQ MOH,Others,90.0,Neutral,UPI Transaction at MOHD MUSTAQ MOH
+2025-11-16,SUPREME HEALTH,Health,50.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-11-16,EKART,Others,865.0,Neutral,UPI Transaction at EKART
+2025-11-16,EKART,Others,397.0,Neutral,UPI Transaction at EKART
+2025-11-16,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-17,Recd:IMPS/532115166094/MYNTRA DES/KKBK/X,Income,-364.0,Happy,Salary/Transfer credit
+2025-11-17,Baba Khaugali,Others,100.0,Neutral,UPI Transaction at Baba Khaugali
+2025-11-17,StyleupCapital,Others,159.0,Neutral,UPI Transaction at StyleupCapital
+2025-11-18,AYASHA NAGORI,Income,-20.0,Happy,Salary/Transfer credit
+2025-11-18,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-18,DEVENDRA R PAND,Income,-1500.0,Happy,Salary/Transfer credit
+2025-11-18,Devendra R Pand,Others,1450.0,Neutral,UPI Transaction at Devendra R Pand
+2025-11-19,MOHD ASHRAF AKB,Others,15.0,Neutral,UPI Transaction at MOHD ASHRAF AKB
+2025-11-19,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-20,DEVENDRA R PAND,Income,-1500.0,Happy,Salary/Transfer credit
+2025-11-20,MR DIY,Others,172.0,Neutral,UPI Transaction at MR DIY
+2025-11-20,SHREE BALAJI CH,Others,18.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2025-11-20,Pravesh Nishad,Others,60.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-11-20,Lalit Medical A,Health,90.0,Neutral,UPI Transaction at Lalit Medical A
+2025-11-20,SUBHASH BAIJURA,Others,40.0,Neutral,UPI Transaction at SUBHASH BAIJURA
+2025-11-20,SUPREME HEALTH,Health,100.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-11-21,SUPREME HEALTH,Health,40.0,Neutral,UPI Transaction at SUPREME HEALTH
+2025-11-21,DEVENDRA R PAND,Income,-3000.0,Happy,Salary/Transfer credit
+2025-11-22,NACH-MUT-DR-GROWW INVEST TECH PR- 46JVM2,Others,200.0,Neutral,UPI Transaction at NACH-MUT-DR-GROWW INVEST TECH PR- 46JVM2
+2025-11-23,OpenAI LLC,Others,1.0,Neutral,UPI Transaction at OpenAI LLC
+2025-11-23,REV-UPI/OpenAI LLC/537015095252/Refund U,Income,-1.0,Happy,Salary/Transfer credit
+2025-11-28,RAKESH KUMAR,Others,170.0,Neutral,UPI Transaction at RAKESH KUMAR
+2025-12-01,BABA SWEET CORN,Food,15.0,Neutral,UPI Transaction at BABA SWEET CORN
+2025-12-01,DEVENDRA R PAND,Income,-20000.0,Happy,Salary/Transfer credit
+2025-12-01,DEVENDRA RAMKHE,Others,20000.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-12-03,SPOTIFY,Entertainment,69.0,Neutral,UPI Transaction at SPOTIFY
+2025-12-03,UPI/M/S BANARAS HAN/533712236313/UPI UPI,Others,25.0,Neutral,UPI Transaction at UPI/M/S BANARAS HAN/533712236313/UPI UPI
+2025-12-05,RAKESH KUMAR,Others,130.0,Neutral,UPI Transaction at RAKESH KUMAR
+2025-12-07,RAVINDRA KUMAR,Others,10.0,Neutral,UPI Transaction at RAVINDRA KUMAR
+2025-12-07,TRIPDA_PRASADAM,Others,60.0,Neutral,UPI Transaction at TRIPDA_PRASADAM
+2025-12-08,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2025-12-09,Devendra R Pand,Income,-1000.0,Happy,Salary/Transfer credit
+2025-12-09,DEVENDRA RAMKHE,Others,700.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-12-09,DEVENDRA RAMKHE,Others,30.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2025-12-10,Devendra R Pand,Income,-39500.0,Happy,Salary/Transfer credit
+2025-12-10,DEVENDRA R PAND,Others,39500.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2025-12-12,3vxb8li2s1@post,Others,1.0,Neutral,UPI Transaction at 3vxb8li2s1@post
+2025-12-13,Amazon India,Shopping,234.0,Neutral,UPI Transaction at Amazon India
+2025-12-15,SRIRAMMISTHANBH,Others,120.0,Neutral,UPI Transaction at SRIRAMMISTHANBH
+2025-12-16,VISHAL SO BHAGA,Others,20.0,Neutral,UPI Transaction at VISHAL SO BHAGA
+2025-12-17,VAIBHAV BHUWAL,Others,400.0,Neutral,UPI Transaction at VAIBHAV BHUWAL
+2025-12-17,Amazon Pay,Shopping,1730.0,Regret,UPI Transaction at Amazon Pay
+2025-12-17,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-12-17,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-12-17,DEVENDRA R PAND,Income,-5000.0,Happy,Salary/Transfer credit
+2025-12-18,AVENUE SUPERMAR,Shopping,3810.71,Neutral,UPI Transaction at AVENUE SUPERMAR
+2025-12-19,SANTOSH R REWAD,Others,1285.0,Neutral,UPI Transaction at SANTOSH R REWAD
+2025-12-20,SHREE BALAJI CH,Others,5.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2025-12-20,STAR BAZAAR,Shopping,29.79,Neutral,UPI Transaction at STAR BAZAAR
+2025-12-20,Prateek Joshi,Others,90.0,Neutral,UPI Transaction at Prateek Joshi
+2025-12-21,SONU DANGI,Others,20.0,Neutral,UPI Transaction at SONU DANGI
+2025-12-21,UTS- direct,Others,10.0,Neutral,UPI Transaction at UTS- direct
+2025-12-22,NACH-MUT-DR-INDIAN CLEARING CORP- 00004V,Travel,200.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 00004V
+2025-12-23,RADHE RADHE PUR,Others,170.0,Neutral,UPI Transaction at RADHE RADHE PUR
+2025-12-24,Pravesh Nishad,Others,30.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-12-27,PRABHAKAR SHANT,Others,10.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-12-28,DEVENDRA R PAND,Income,-1000.0,Happy,Salary/Transfer credit
+2025-12-28,STAR BAZAAR,Shopping,892.0,Neutral,UPI Transaction at STAR BAZAAR
+2025-12-28,RAYYAN ASLAM KA,Others,60.0,Neutral,UPI Transaction at RAYYAN ASLAM KA
+2025-12-28,Kaivalya Trader,Others,100.0,Neutral,UPI Transaction at Kaivalya Trader
+2025-12-29,DEVENDRA R PAND,Income,-1000.0,Happy,Salary/Transfer credit
+2025-12-29,Swiggy Limited,Food,697.0,Regret,UPI Transaction at Swiggy Limited
+2025-12-29,Pravesh Nishad,Others,75.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-12-30,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-12-31,AVENUE SUPERMAR,Shopping,4.0,Neutral,UPI Transaction at AVENUE SUPERMAR
+2025-12-31,PRABHAKAR SHANT,Others,30.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2025-12-31,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2025-12-31,SURENDRA SHIVBU,Others,30.0,Neutral,UPI Transaction at SURENDRA SHIVBU
+2025-12-31,Int.Pd:3546287720:01-10-2025 to 31-12-20,Income,-16.0,Happy,Salary/Transfer credit
+2026-01-01,SHREE BALAJI CH,Others,20.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2026-01-01,SHREE BALAJI CH,Others,10.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2026-01-02,DEVENDRA R PAND,Income,-19200.0,Happy,Salary/Transfer credit
+2026-01-02,DEVENDRA RAMKHE,Others,19200.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2026-01-02,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-01-03,SPOTIFY,Entertainment,69.0,Neutral,UPI Transaction at SPOTIFY
+2026-01-09,DEVENDRA R PAND,Income,-500.0,Happy,Salary/Transfer credit
+2026-01-09,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2026-01-10,DEVENDRA R PAND,Income,-2200.0,Happy,Salary/Transfer credit
+2026-01-10,DEVENDRA RAMKHE,Others,1210.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2026-01-10,ANISH RAMCHRAN,Others,210.0,Neutral,UPI Transaction at ANISH RAMCHRAN
+2026-01-10,SHREE BALAJI CH,Others,70.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2026-01-13,CHRG:SMS ALERT FEE FOR THE MONTH OF DEC2,Others,1.59,Neutral,UPI Transaction at CHRG:SMS ALERT FEE FOR THE MONTH OF DEC2
+2026-01-13,STAR BAZAAR,Shopping,134.0,Neutral,UPI Transaction at STAR BAZAAR
+2026-01-13,Jeevan Sanjeetr,Others,60.0,Neutral,UPI Transaction at Jeevan Sanjeetr
+2026-01-14,DEVENDRA R PAND,Income,-5500.0,Happy,Salary/Transfer credit
+2026-01-14,AVENUE SUPERMAR,Shopping,5748.47,Neutral,UPI Transaction at AVENUE SUPERMAR
+2026-01-14,DEVENDRA R PAND,Income,-500.0,Happy,Salary/Transfer credit
+2026-01-14,SHREE LAXMI XER,Others,40.0,Neutral,UPI Transaction at SHREE LAXMI XER
+2026-01-15,PRABHAKAR SHANT,Others,20.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2026-01-15,Radha Narayanla,Others,20.0,Neutral,UPI Transaction at Radha Narayanla
+2026-01-15,Jay maa durge j,Others,80.0,Neutral,UPI Transaction at Jay maa durge j
+2026-01-15,Surendra shivmu,Others,60.0,Neutral,UPI Transaction at Surendra shivmu
+2026-01-16,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-01-17,Aryan genral st,Others,40.0,Neutral,UPI Transaction at Aryan genral st
+2026-01-18,PRABHAKAR SHANT,Others,20.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2026-01-18,PRABHAKAR SHANT,Others,20.0,Neutral,UPI Transaction at PRABHAKAR SHANT
+2026-01-19,Haseem Ali,Others,36.0,Neutral,UPI Transaction at Haseem Ali
+2026-01-19,NAGORI AAMNA DA,Others,100.0,Neutral,UPI Transaction at NAGORI AAMNA DA
+2026-01-19,Pravesh Nishad,Others,20.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-01-19,SHREE BALAJI CH,Others,90.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2026-01-19,sldharth phool,Others,5.0,Neutral,UPI Transaction at sldharth phool
+2026-01-21,Indian Railways,Travel,10.0,Neutral,UPI Transaction at Indian Railways
+2026-01-22,NACH-MUT-DR-INDIAN CLEARING CORP- 0000MV,Travel,200.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 0000MV
+2026-01-22,DEVENDRA R PAND,Income,-1000.0,Happy,Salary/Transfer credit
+2026-01-22,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-01-23,Amazon Pay,Shopping,697.0,Regret,UPI Transaction at Amazon Pay
+2026-01-23,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-01-25,DEVENDRA R PAND,Income,-200.0,Happy,Salary/Transfer credit
+2026-01-25,Tata Play,Others,204.0,Neutral,UPI Transaction at Tata Play
+2026-01-26,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-01-27,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-01-31,Indian Railways,Travel,10.0,Neutral,UPI Transaction at Indian Railways
+2026-01-31,DEVENDRA R PAND,Income,-20000.0,Happy,Salary/Transfer credit
+2026-01-31,DEVENDRA RAMKHE,Others,20000.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2026-02-01,ARBUDA SPORTS,Others,160.0,Neutral,UPI Transaction at ARBUDA SPORTS
+2026-02-03,SHIV KUMAR M GU,Others,5.0,Neutral,UPI Transaction at SHIV KUMAR M GU
+2026-02-03,Surendra shivmu,Others,30.0,Neutral,UPI Transaction at Surendra shivmu
+2026-02-05,Indian Railways,Travel,20.0,Neutral,UPI Transaction at Indian Railways
+2026-02-05,DEVENDRA R PAND,Income,-1100.0,Happy,Salary/Transfer credit
+2026-02-05,STAR BAZAAR,Shopping,786.65,Neutral,UPI Transaction at STAR BAZAAR
+2026-02-06,SPOTIFY,Entertainment,69.0,Neutral,UPI Transaction at SPOTIFY
+2026-02-06,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-06,Surendra shivmu,Others,30.0,Neutral,UPI Transaction at Surendra shivmu
+2026-02-07,Devendra R Pand,Income,-9000.0,Happy,Salary/Transfer credit
+2026-02-07,DEVENDRA R PAND,Others,9000.0,Neutral,UPI Transaction at DEVENDRA R PAND
+2026-02-07,DEVENDRA R PAND,Income,-400.0,Happy,Salary/Transfer credit
+2026-02-07,WSNS PRIVATE LI,Others,430.0,Neutral,UPI Transaction at WSNS PRIVATE LI
+2026-02-07,Aryan genral st,Others,20.0,Neutral,UPI Transaction at Aryan genral st
+2026-02-08,Achole Develope,Others,20.0,Neutral,UPI Transaction at Achole Develope
+2026-02-08,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-09,Indian Railways,Travel,20.0,Neutral,UPI Transaction at Indian Railways
+2026-02-09,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-10,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-13,DEVENDRA R PAND,Income,-1000.0,Happy,Salary/Transfer credit
+2026-02-13,juort3692q@post,Others,5.0,Neutral,UPI Transaction at juort3692q@post
+2026-02-13,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-14,Surendra shivmu,Others,60.0,Neutral,UPI Transaction at Surendra shivmu
+2026-02-15,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-16,juort3692q@post,Others,5.0,Neutral,UPI Transaction at juort3692q@post
+2026-02-16,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-17,CHRG:SMS ALERT FEE FOR THE MONTH OF JAN2,Others,2.3,Neutral,UPI Transaction at CHRG:SMS ALERT FEE FOR THE MONTH OF JAN2
+2026-02-17,CHRG-POS TXN DECLINE FEE/16-02- 26/xx428,Others,29.5,Neutral,UPI Transaction at CHRG-POS TXN DECLINE FEE/16-02- 26/xx428
+2026-02-17,DEVENDRA R PAND,Income,-1260.0,Happy,Salary/Transfer credit
+2026-02-17,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-18,RAHUL PANDEY,Income,-2142.0,Happy,Salary/Transfer credit
+2026-02-18,PCI/4288/CLAUDE.AI SUBSCRIPTION/+1415218,Others,1891.24,Neutral,UPI Transaction at PCI/4288/CLAUDE.AI SUBSCRIPTION/+1415218
+2026-02-18,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-19,Amazon Pay,Shopping,1260.0,Regret,UPI Transaction at Amazon Pay
+2026-02-19,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-20,AVENUE SUPERMAR,Shopping,97.3,Neutral,UPI Transaction at AVENUE SUPERMAR
+2026-02-20,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-20,YADAV V,Income,-450.0,Happy,Salary/Transfer credit
+2026-02-20,DUMMY NAME,Others,452.0,Neutral,UPI Transaction at DUMMY NAME
+2026-02-20,REV-UPI/DUMMY NAME/641701473948/UPI UPI-,Income,-452.0,Happy,Salary/Transfer credit
+2026-02-21,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-22,NACH-MUT-DR-INDIAN CLEARING CORP- 0000T7,Travel,200.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 0000T7
+2026-02-22,ARBUDA SPORTS,Others,75.0,Neutral,UPI Transaction at ARBUDA SPORTS
+2026-02-23,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-23,Surendra shivmu,Others,30.0,Neutral,UPI Transaction at Surendra shivmu
+2026-02-23,SUPREME HEALTH,Health,94.0,Neutral,UPI Transaction at SUPREME HEALTH
+2026-02-24,VIVEK NAGENDRA,Income,-4000.0,Happy,Salary/Transfer credit
+2026-02-24,ABHISHEK VISHWA,Others,4000.0,Neutral,UPI Transaction at ABHISHEK VISHWA
+2026-02-24,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-24,SHUBHAM SURENDR,Others,60.0,Neutral,UPI Transaction at SHUBHAM SURENDR
+2026-02-25,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-26,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-27,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-02-28,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-03-01,Mr ROSHAN GUP,Others,50.0,Neutral,UPI Transaction at Mr ROSHAN GUP
+2026-03-01,Mr JITENDRA DEE,Others,45.0,Neutral,UPI Transaction at Mr JITENDRA DEE
+2026-03-01,PRADEEP,Others,20.0,Neutral,UPI Transaction at PRADEEP
+2026-03-02,juort3692q@post,Others,20.0,Neutral,UPI Transaction at juort3692q@post
+2026-03-02,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-03-03,NACH-ECS-CR-RAIL VIKAS NIGAM LIM-1261943,Income,-1.0,Happy,Salary/Transfer credit
+2026-03-03,SPOTIFY,Entertainment,69.0,Neutral,UPI Transaction at SPOTIFY
+2026-03-04,AWS India,Shopping,2.0,Neutral,UPI Transaction at AWS India
+2026-03-04,AWS India,Income,-2.0,Happy,Salary/Transfer credit
+2026-03-04,TALIB,Others,50.0,Neutral,UPI Transaction at TALIB
+2026-03-05,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-03-06,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-03-07,shivsoni9561@ok,Others,30.0,Neutral,UPI Transaction at shivsoni9561@ok
+2026-03-07,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-03-07,SUMAN KIRAN SIN,Others,70.0,Neutral,UPI Transaction at SUMAN KIRAN SIN
+2026-03-08,DEVENDRA R PAND,Income,-800.0,Happy,Salary/Transfer credit
+2026-03-08,Amazon Pay,Shopping,630.0,Regret,UPI Transaction at Amazon Pay
+2026-03-08,SUNEEL KUMAR,Others,60.0,Neutral,UPI Transaction at SUNEEL KUMAR
+2026-03-08,SHUBHAM SURENDR,Others,30.0,Neutral,UPI Transaction at SHUBHAM SURENDR
+2026-03-08,DEVENDRA R PAND,Income,-195.0,Happy,Salary/Transfer credit
+2026-03-08,Tata Play Limit,Others,200.0,Neutral,UPI Transaction at Tata Play Limit
+2026-03-09,CHRG:SMS ALERT FEE FOR THE MONTH OF FEB2,Others,3.19,Neutral,UPI Transaction at CHRG:SMS ALERT FEE FOR THE MONTH OF FEB2
+2026-03-09,Anita Gupta,Others,20.0,Neutral,UPI Transaction at Anita Gupta
+2026-03-09,juort3692q@post,Others,20.0,Neutral,UPI Transaction at juort3692q@post
+2026-03-09,Laxman Kashyap,Others,60.0,Neutral,UPI Transaction at Laxman Kashyap
+2026-03-11,NEFT AXODH07026936967 EKAGRATA FINTECH B,Income,-20000.0,Happy,Salary/Transfer credit
+2026-03-11,LENSKART SOLUTI,Others,49.0,Neutral,UPI Transaction at LENSKART SOLUTI
+2026-03-11,PLATINUM DEBIT CARD ISSUANCE FEE FOR 202,Others,799.0,Neutral,UPI Transaction at PLATINUM DEBIT CARD ISSUANCE FEE FOR 202
+2026-03-11,LENSKART,Others,6599.0,Neutral,UPI Transaction at LENSKART
+2026-03-11,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-03-11,Divyanshu Lalji,Others,71.0,Neutral,UPI Transaction at Divyanshu Lalji
+2026-03-12,Ayasha Nagori,Others,96.0,Neutral,UPI Transaction at Ayasha Nagori
+2026-03-12,SHIVMANI SANKAT,Others,5000.0,Neutral,UPI Transaction at SHIVMANI SANKAT
+2026-03-13,Mr ROSHAN GUP,Others,40.0,Neutral,UPI Transaction at Mr ROSHAN GUP
+2026-03-13,DEVENDRA R PAND,Income,-21500.0,Happy,Salary/Transfer credit
+2026-03-13,Devendra R Pand,Others,21500.0,Neutral,UPI Transaction at Devendra R Pand
+2026-03-13,DEVENDRA R PAND,Income,-21500.0,Happy,Salary/Transfer credit
+2026-03-13,DEVENDRA RAMKHE,Others,21500.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2026-03-13,GOOGLE INDIA DI,Income,-2.0,Happy,Salary/Transfer credit
+2026-03-13,RAVINDRA SATAI,Others,20.0,Neutral,UPI Transaction at RAVINDRA SATAI
+2026-03-13,Indian Railways,Travel,10.0,Neutral,UPI Transaction at Indian Railways
+2026-03-13,SASHANK SANTOSH,Others,20.0,Neutral,UPI Transaction at SASHANK SANTOSH
+2026-03-13,DILEEP KUMAR TI,Others,15.0,Neutral,UPI Transaction at DILEEP KUMAR TI
+2026-03-13,Jeevan Sanjeetr,Others,50.0,Neutral,UPI Transaction at Jeevan Sanjeetr
+2026-03-13,Jeevan Sanjeetr,Others,10.0,Neutral,UPI Transaction at Jeevan Sanjeetr
+2026-03-13,SHREE BALAJI CH,Others,55.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2026-03-13,juort3692q@post,Others,5.0,Neutral,UPI Transaction at juort3692q@post
+2026-03-13,JAYA GENERAL ST,Others,120.0,Neutral,UPI Transaction at JAYA GENERAL ST
+2026-03-13,STAR BAZAAR,Shopping,59.97,Neutral,UPI Transaction at STAR BAZAAR
+2026-03-13,DEVENDRA R PAND,Income,-360.0,Happy,Salary/Transfer credit
+2026-03-13,DEVENDRA RAMKHE,Others,360.0,Neutral,UPI Transaction at DEVENDRA RAMKHE
+2026-03-14,Radha Narayanla,Others,10.0,Neutral,UPI Transaction at Radha Narayanla
+2026-03-14,Rajdhani Sweets,Food,10.0,Neutral,UPI Transaction at Rajdhani Sweets
+2026-03-14,Indian Railways,Travel,5.0,Neutral,UPI Transaction at Indian Railways
+2026-03-14,SHREE BALAJI CH,Others,30.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2026-03-14,PUNJABI CHUR CH,Others,240.0,Neutral,UPI Transaction at PUNJABI CHUR CH
+2026-03-14,NIKHIL DASHRATH,Others,60.0,Neutral,UPI Transaction at NIKHIL DASHRATH
+2026-03-15,Mr ROSHAN GUP,Others,20.0,Neutral,UPI Transaction at Mr ROSHAN GUP
+2026-03-15,TATA STARBUCKS,Others,504.0,Neutral,UPI Transaction at TATA STARBUCKS
+2026-03-16,Amazon Pay,Shopping,347.0,Neutral,UPI Transaction at Amazon Pay
+2026-03-16,juort3692q@post,Others,15.0,Neutral,UPI Transaction at juort3692q@post
+2026-03-16,juort3692q@post,Others,5.0,Neutral,UPI Transaction at juort3692q@post
+2026-03-16,RAJKUMAR BHAGAT,Others,140.0,Neutral,UPI Transaction at RAJKUMAR BHAGAT
+2026-03-16,TALIB,Others,70.0,Neutral,UPI Transaction at TALIB
+2026-03-16,Pravesh Nishad,Others,50.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-03-17,Pravesh Nishad,Others,25.0,Neutral,UPI Transaction at Pravesh Nishad
+2026-03-18,NEFT HDFCH00873238466 JM FINANCIAL MUTUA,Income,-800.0,Happy,Salary/Transfer credit
+2026-03-18,AVENUE SUPERMAR,Shopping,1585.23,Neutral,UPI Transaction at AVENUE SUPERMAR
+2026-03-18,8975503284@ptye,Others,60.0,Neutral,UPI Transaction at 8975503284@ptye
+2026-03-18,UNITY TREND,Others,198.0,Neutral,UPI Transaction at UNITY TREND
+2026-03-18,MAHESH KUMAR NI,Others,25.0,Neutral,UPI Transaction at MAHESH KUMAR NI
+2026-03-18,SHREE BALAJI CH,Others,20.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2026-03-19,MOHAMMED ABULES,Others,250.0,Neutral,UPI Transaction at MOHAMMED ABULES
+2026-03-19,MAHESH KUMAR NI,Others,25.0,Neutral,UPI Transaction at MAHESH KUMAR NI
+2026-03-19,SHREE BALAJI CH,Others,10.0,Neutral,UPI Transaction at SHREE BALAJI CH
+2026-03-20,Blue Dart Expre,Others,1950.0,Neutral,UPI Transaction at Blue Dart Expre
+2026-03-22,NACH-MUT-DR-INDIAN CLEARING CORP- 00002Y,Travel,200.0,Neutral,UPI Transaction at NACH-MUT-DR-INDIAN CLEARING CORP- 00002Y
+2026-03-22,Amazon Pay,Shopping,563.0,Regret,UPI Transaction at Amazon Pay
+2026-03-22,SUPREME HEALTH,Health,95.0,Neutral,UPI Transaction at SUPREME HEALTH
+2026-03-23,juort3692q@post,Others,5.0,Neutral,UPI Transaction at juort3692q@post
+2026-03-24,MAMTA AVASTHI,Others,70.0,Neutral,UPI Transaction at MAMTA AVASTHI
+2026-03-24,MAMTA AVASTHI,Others,30.0,Neutral,UPI Transaction at MAMTA AVASTHI
+2026-03-24,PCD/8423/STAR BAZAAR/MUMBAI240326/14:06,Shopping,191.85,Neutral,UPI Transaction at PCD/8423/STAR BAZAAR/MUMBAI240326/14:06
+2026-03-24,MAHESH KUMAR NI,Others,50.0,Neutral,UPI Transaction at MAHESH KUMAR NI
+2026-03-26,ZEPTO MARKETPLA,Shopping,660.0,Neutral,UPI Transaction at ZEPTO MARKETPLA
+2026-03-27,KIRANSINGH DALP,Others,140.0,Neutral,UPI Transaction at KIRANSINGH DALP
+2026-03-28,VEGAN FOODS,Food,10.0,Neutral,UPI Transaction at VEGAN FOODS
+2026-03-28,Rapido,Travel,27.0,Neutral,UPI Transaction at Rapido
+2026-03-30,MAHESH KUMAR NI,Others,50.0,Neutral,UPI Transaction at MAHESH KUMAR NI
+2026-03-31,Int.Pd:3546287720:01-01-2026 to 31-03-20,Income,-340.8,Happy,Salary/Transfer credit
