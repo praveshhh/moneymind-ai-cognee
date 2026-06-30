@@ -10,6 +10,7 @@ export default function Dashboard({ onTransactionAdded }) {
   const [budgets, setBudgets] = useState([]);
   const [user, setUser] = useState(null);
   const [transactions, setTransactions] = useState([]);
+  const [summary, setSummary] = useState({ total_income: 0, total_expenses: 0 });
 
   // Forms States
   const [amount, setAmount] = useState("");
@@ -38,13 +39,14 @@ export default function Dashboard({ onTransactionAdded }) {
       const token = localStorage.getItem("token");
       const headers = { Authorization: `Bearer ${token}` };
 
-      const [accRes, billRes, goalRes, budgRes, userRes, txRes] = await Promise.all([
+      const [accRes, billRes, goalRes, budgRes, userRes, txRes, sumRes] = await Promise.all([
         axios.get("http://localhost:8000/api/transactions/accounts", { headers }),
         axios.get("http://localhost:8000/api/bills", { headers }),
         axios.get("http://localhost:8000/api/goals", { headers }),
         axios.get("http://localhost:8000/api/budgets", { headers }),
         axios.get("http://localhost:8000/api/auth/me", { headers }),
-        axios.get("http://localhost:8000/api/transactions?limit=10", { headers })
+        axios.get("http://localhost:8000/api/transactions?limit=10", { headers }),
+        axios.get("http://localhost:8000/api/transactions/summary", { headers })
       ]);
 
       setBills(billRes.data);
@@ -52,6 +54,7 @@ export default function Dashboard({ onTransactionAdded }) {
       setBudgets(budgRes.data);
       setUser(userRes.data);
       setTransactions(txRes.data);
+      setSummary(sumRes.data);
 
       const accountsList = accRes.data;
       setAccounts(accountsList);
@@ -163,16 +166,16 @@ export default function Dashboard({ onTransactionAdded }) {
 
   // Calculations
   const checkingBal = accounts.filter(a => a.type === "checking" || a.type === "savings").reduce((sum, a) => sum + a.balance, 0);
-  const creditDebt = accounts.find(a => a.type === "credit")?.balance || 0;
   const totalBills = bills.reduce((acc, curr) => acc + (curr.status === "Unpaid" ? curr.amount : 0), 0);
-  const projectedSurplus = checkingBal - creditDebt - totalBills;
+  
+  // Real Statement Aggregates
+  const totalIncome = summary.total_income || 0;
+  const totalExpenses = summary.total_expenses || 0;
 
-  // Health Score calculation (0 to 100)
-  const healthScore = Math.max(0, Math.min(100, Math.round(
-    ((checkingBal - creditDebt) > 0 ? 50 : 0) + 
-    ((projectedSurplus > 5000) ? 30 : projectedSurplus > 0 ? 15 : 0) +
-    (goals.length > 0 ? 20 : 0)
-  )));
+  // Real Savings Rate percentage (income - expenses) / income
+  const savingsRate = totalIncome > 0 
+    ? Math.max(0, Math.min(100, Math.round(((totalIncome - totalExpenses) / totalIncome) * 100))) 
+    : 0;
 
   return (
     <div className="space-y-6">
@@ -194,7 +197,9 @@ export default function Dashboard({ onTransactionAdded }) {
         <div className="glass-panel rounded-2xl p-5 relative overflow-hidden glass-card-glow-green">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Total Cash & Savings</span>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">
+                {accounts.length === 1 ? `${accounts[0].name} Balance` : "Total Cash & Savings"}
+              </span>
               <h2 className="text-2xl font-extrabold text-white mt-1">Rs. {checkingBal.toLocaleString()}</h2>
             </div>
             <div className="p-2.5 bg-primary/10 rounded-xl border border-primary/20">
@@ -202,48 +207,48 @@ export default function Dashboard({ onTransactionAdded }) {
             </div>
           </div>
           <div className="mt-3 flex items-center gap-1">
-            <span className="text-[10px] text-gray-400 leading-normal">Money in HDFC, Kotak 811, and SBI (your "Liquidity").</span>
+            <span className="text-[10px] text-gray-400 leading-normal">Your current available savings balance.</span>
           </div>
         </div>
 
-        {/* Card 2: Credit Card */}
+        {/* Card 2: Total Inflow */}
+        <div className="glass-panel rounded-2xl p-5 relative overflow-hidden glass-card-glow-green">
+          <div className="flex justify-between items-start">
+            <div>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Total Inflow / Deposits</span>
+              <h2 className="text-2xl font-extrabold text-white mt-1">Rs. {totalIncome.toLocaleString()}</h2>
+            </div>
+            <div className="p-2.5 bg-primary/10 rounded-xl border border-primary/20">
+              <Plus className="w-5 h-5 text-primary" />
+            </div>
+          </div>
+          <div className="mt-3 flex items-center gap-1">
+            <span className="text-[10px] text-gray-400 leading-normal">Total money received from statement.</span>
+          </div>
+        </div>
+
+        {/* Card 3: Total Outflow */}
         <div className="glass-panel rounded-2xl p-5 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Credit Card Bills</span>
-              <h2 className="text-2xl font-extrabold text-white mt-1">Rs. {creditDebt.toLocaleString()}</h2>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Total Outflow / Expenses</span>
+              <h2 className="text-2xl font-extrabold text-white mt-1 font-semibold text-danger-300">Rs. {totalExpenses.toLocaleString()}</h2>
             </div>
             <div className="p-2.5 bg-danger/10 rounded-xl border border-danger/20">
               <AlertTriangle className="w-5 h-5 text-danger" />
             </div>
           </div>
           <div className="mt-3 flex items-center gap-1">
-            <span className="text-[10px] text-gray-400 leading-normal">Money you owe on your ICICI credit card.</span>
+            <span className="text-[10px] text-gray-400 leading-normal">Total money spent from statement.</span>
           </div>
         </div>
 
-        {/* Card 3: Upcoming Commitments */}
-        <div className="glass-panel rounded-2xl p-5 relative overflow-hidden glass-card-glow-indigo">
-          <div className="flex justify-between items-start">
-            <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Upcoming Bills</span>
-              <h2 className="text-2xl font-extrabold text-white mt-1">Rs. {totalBills.toLocaleString()}</h2>
-            </div>
-            <div className="p-2.5 bg-indigo-500/10 rounded-xl border border-indigo-500/20">
-              <Calendar className="w-5 h-5 text-indigo-400" />
-            </div>
-          </div>
-          <div className="mt-3 flex items-center gap-1">
-            <span className="text-[10px] text-gray-400 leading-normal">Rent, SIP, electricity, and subscriptions due soon.</span>
-          </div>
-        </div>
-
-        {/* Card 4: Health Score */}
+        {/* Card 4: Savings Rate */}
         <div className="glass-panel rounded-2xl p-5 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Financial Health Score</span>
-              <h2 className="text-2xl font-extrabold text-white mt-1">{healthScore}%</h2>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Real Savings Rate</span>
+              <h2 className="text-2xl font-extrabold text-white mt-1">{savingsRate}%</h2>
             </div>
             <div className="p-2.5 bg-accent/10 rounded-xl border border-accent/20">
               <Percent className="w-5 h-5 text-accent" />
@@ -251,7 +256,7 @@ export default function Dashboard({ onTransactionAdded }) {
           </div>
           {/* Progress bar */}
           <div className="w-full bg-gray-800 rounded-full h-1.5 mt-3">
-            <div className="bg-accent h-1.5 rounded-full" style={{ width: `${healthScore}%` }} />
+            <div className="bg-accent h-1.5 rounded-full" style={{ width: `${savingsRate}%` }} />
           </div>
         </div>
       </div>
