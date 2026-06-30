@@ -122,22 +122,196 @@ async def upload_csv(
         raise HTTPException(status_code=404, detail="Account not found")
 
     contents = await file.read()
-    string_data = contents.decode("utf-8")
-    csv_file = StringIO(string_data)
-    reader = csv.DictReader(csv_file)
+    rows = []
+    
+    filename_lower = file.filename.lower()
+    if filename_lower.endswith(".pdf"):
+        import pypdf
+        import io
+        import re
+        
+        pdf_file = io.BytesIO(contents)
+        reader = pypdf.PdfReader(pdf_file)
+        
+        tx_start_pattern = re.compile(r"^\s*(\d+)\s+(\d{2}\s+[A-Za-z]{3}\s+\d{4})\s*(.*)$")
+        
+        def parse_amount(val_str):
+            val_str = val_str.replace(",", "").strip()
+            try:
+                return float(val_str)
+            except ValueError:
+                return None
+
+        months_map = {
+            "Jan": "01", "Feb": "02", "Mar": "03", "Apr": "04", "May": "05", "Jun": "06",
+            "Jul": "07", "Aug": "08", "Sep": "09", "Oct": "10", "Nov": "11", "Dec": "12"
+        }
+
+        def format_date(date_str):
+            parts = date_str.split()
+            if len(parts) == 3:
+                day, month_name, year = parts
+                month = months_map.get(month_name, "01")
+                return f"{year}-{month}-{day}"
+            return date_str
+
+        def clean_merchant(desc):
+            desc_clean = desc.replace("M/S.", "MS ")
+            if desc_clean.startswith("UPI/"):
+                parts = desc_clean.split("/")
+                if len(parts) > 1:
+                    candidate = parts[1].strip()
+                    if candidate and not candidate.isdigit() and len(candidate) > 2:
+                        return candidate
+            return desc[:40].strip()
+
+        def get_category(desc, amount):
+            desc_lower = desc.lower()
+            if amount < 0:
+                return "Income"
+            
+            if any(k in desc_lower for k in ["sweet", "food", "zomato", "swiggy", "burger", "domino", "jain", "deli", "kitchen"]):
+                return "Food"
+            if any(k in desc_lower for k in ["amazon", "shopping", "decathlon", "myntra", "nike", "zepto", "star bazaar", "kirana", "supermar"]):
+                return "Shopping"
+            if any(k in desc_lower for k in ["railway", "irctc", "travel", "ola", "uber", "cab", "rapido", "clearing"]):
+                return "Travel"
+            if any(k in desc_lower for k in ["spotify", "netflix", "jiohotstar", "hotstar", "youtube", "google play", "playstore"]):
+                return "Entertainment"
+            if any(k in desc_lower for k in ["rent", "bill", "electricity", "recharge", "tata sky", "neon-1", "broadband", "phonepe"]):
+                return "Utilities"
+            if any(k in desc_lower for k in ["dietico", "health", "medical", "hospital", "pharmacy"]):
+                return "Health"
+            
+            return "Others"
+
+        def get_sentiment(desc, category, amount):
+            desc_lower = desc.lower()
+            if category == "Income":
+                return "Happy"
+            if category in ["Food", "Shopping"] and amount > 500:
+                if any(k in desc_lower for k in ["swiggy", "zomato", "domino", "decathlon", "amazon"]):
+                    return "Regret"
+            return "Neutral"
+
+        raw_parsed = []
+        current_tx = None
+
+        for page in reader.pages:
+            text = page.extract_text()
+            if not text:
+                continue
+            lines = text.split("\n")
+            for line in lines:
+                line_str = line.strip()
+                if not line_str:
+                    continue
+                    
+                match = tx_start_pattern.match(line_str)
+                if match:
+                    if current_tx:
+                        raw_parsed.append(current_tx)
+                    index = int(match.group(1))
+                    date_str = match.group(2)
+                    rem = match.group(3)
+                    current_tx = {
+                        "index": index,
+                        "date": format_date(date_str),
+                        "description_parts": [rem],
+                        "raw_amount": None,
+                        "balance": None
+                    }
+                    tokens = rem.split()
+                    if len(tokens) >= 2:
+                        balance_val = parse_amount(tokens[-1])
+                        amount_val = parse_amount(tokens[-2])
+                        if balance_val is not None and amount_val is not None and "." in tokens[-1] and "." in tokens[-2]:
+                            current_tx["balance"] = balance_val
+                            current_tx["raw_amount"] = amount_val
+                            current_tx["description_parts"] = [" ".join(tokens[:-2])]
+                else:
+                    if current_tx:
+                        tokens = line_str.split()
+                        if len(tokens) >= 2:
+                            balance_val = parse_amount(tokens[-1])
+                            amount_val = parse_amount(tokens[-2])
+                            if balance_val is not None and amount_val is not None and "." in tokens[-1] and "." in tokens[-2]:
+                                current_tx["balance"] = balance_val
+                                current_tx["raw_amount"] = amount_val
+                                if len(tokens) > 2:
+                                    current_tx["description_parts"].append(" ".join(tokens[:-2]))
+                            else:
+                                current_tx["description_parts"].append(line_str)
+                        else:
+                            current_tx["description_parts"].append(line_str)
+
+        if current_tx:
+            raw_parsed.append(current_tx)
+
+        # Stateful balance-difference parsing starting from the account's existing balance
+        prev_balance = account.balance
+        
+        for tx in raw_parsed:
+            raw_amount = tx["raw_amount"]
+            balance = tx["balance"]
+            
+            if balance is None or raw_amount is None:
+                balance = balance or prev_balance
+                raw_amount = raw_amount or 0.0
+                
+            if balance > prev_balance:
+                amount = -raw_amount
+            else:
+                amount = raw_amount
+                
+            desc_text = " ".join(tx["description_parts"]).strip()
+            desc_clean = re.sub(r'\s+', ' ', desc_text)
+            
+            merchant = clean_merchant(desc_clean)
+            category = get_category(desc_clean, amount)
+            sentiment = get_sentiment(desc_clean, category, amount)
+            
+            note = f"Salary/Transfer credit" if category == "Income" else f"UPI Transaction at {merchant}"
+            
+            rows.append({
+                "date": tx["date"],
+                "merchant": merchant,
+                "category": category,
+                "amount": amount,
+                "sentiment": sentiment,
+                "note": note
+            })
+            
+            prev_balance = balance
+    else:
+        string_data = contents.decode("utf-8")
+        csv_file = StringIO(string_data)
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            try:
+                rows.append({
+                    "date": row.get("date", datetime.utcnow().strftime("%Y-%m-%d")),
+                    "merchant": row.get("merchant", "Unknown Merchant"),
+                    "category": row.get("category", "Uncategorized"),
+                    "amount": float(row.get("amount", 0.0)),
+                    "sentiment": row.get("sentiment", "Neutral"),
+                    "note": row.get("note", "")
+                })
+            except:
+                continue
 
     imported_count = 0
     descriptions = []
-    for row in reader:
-        # Expected CSV columns: date, merchant, category, amount, sentiment, note
+    
+    for row in rows:
         try:
-            amount = float(row.get("amount", 0.0))
-            merchant = row.get("merchant", "Unknown Merchant")
-            category = row.get("category", "Uncategorized")
-            date_str = row.get("date", datetime.utcnow().strftime("%Y-%m-%d"))
+            amount = row["amount"]
+            merchant = row["merchant"]
+            category = row["category"]
+            date_str = row["date"]
             tx_date = datetime.strptime(date_str, "%Y-%m-%d").date()
-            sentiment = row.get("sentiment", "Neutral")
-            note = row.get("note", "")
+            sentiment = row["sentiment"]
+            note = row["note"]
 
             tx_type = "debit" if amount > 0 else "credit"
 
@@ -169,7 +343,6 @@ async def upload_csv(
             descriptions.append(event_desc)
             imported_count += 1
         except Exception as e:
-            # Skip invalid rows
             continue
 
     # Ingest all transactions in a single batch call to Cognee (blazing fast!)
@@ -177,7 +350,8 @@ async def upload_csv(
         await remember_transactions_batch(user_id=current_user.id, descriptions=descriptions)
 
     db.commit()
-    return {"message": f"Successfully parsed CSV statement. Ingested {imported_count} transactions into SQL database and Cognee memory graph."}
+    file_type_label = "PDF" if filename_lower.endswith(".pdf") else "CSV"
+    return {"message": f"Successfully parsed {file_type_label} statement. Ingested {imported_count} transactions into SQL database and Cognee memory graph."}
 
 @router.post("/mock-sms")
 async def mock_sms_webhook(
@@ -262,3 +436,17 @@ async def mock_sms_webhook(
         "merchant": merchant,
         "transaction_id": new_tx.id
     }
+
+class AccountResponse(BaseModel):
+    id: int
+    name: str
+    type: str
+    balance: float
+
+    class Config:
+        from_attributes = True
+
+@router.get("/accounts", response_model=List[AccountResponse])
+def get_accounts(current_user: User = Depends(get_current_user), db: Session = Depends(get_db)):
+    accounts = db.query(Account).filter(Account.user_id == current_user.id).all()
+    return accounts

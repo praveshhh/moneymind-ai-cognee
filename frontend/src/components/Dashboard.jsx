@@ -375,7 +375,7 @@ export default function Dashboard({ onTransactionAdded }) {
               
               <input
                 type="file"
-                accept=".csv"
+                accept=".csv,.pdf"
                 onChange={(e) => setCsvFile(e.target.files[0])}
                 className="w-full text-xs text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-gray-800 file:text-white hover:file:bg-gray-750"
                 required
