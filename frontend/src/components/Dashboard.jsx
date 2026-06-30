@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Plus, Upload, MessageSquare, AlertTriangle, CheckCircle, Wallet, Goal, Calendar, Percent, ShieldAlert } from "lucide-react";
+import { Plus, Upload, MessageSquare, AlertTriangle, CheckCircle, Wallet, Goal, Calendar, Percent, ShieldAlert, Clock } from "lucide-react";
 
 export default function Dashboard({ onTransactionAdded }) {
   // Database States
@@ -9,6 +9,7 @@ export default function Dashboard({ onTransactionAdded }) {
   const [goals, setGoals] = useState([]);
   const [budgets, setBudgets] = useState([]);
   const [user, setUser] = useState(null);
+  const [transactions, setTransactions] = useState([]);
 
   // Forms States
   const [amount, setAmount] = useState("");
@@ -37,18 +38,20 @@ export default function Dashboard({ onTransactionAdded }) {
       const token = localStorage.getItem("token");
       const headers = { Authorization: `Bearer ${token}` };
 
-      const [accRes, billRes, goalRes, budgRes, userRes] = await Promise.all([
+      const [accRes, billRes, goalRes, budgRes, userRes, txRes] = await Promise.all([
         axios.get("http://localhost:8000/api/transactions/accounts", { headers }),
         axios.get("http://localhost:8000/api/bills", { headers }),
         axios.get("http://localhost:8000/api/goals", { headers }),
         axios.get("http://localhost:8000/api/budgets", { headers }),
-        axios.get("http://localhost:8000/api/auth/me", { headers })
+        axios.get("http://localhost:8000/api/auth/me", { headers }),
+        axios.get("http://localhost:8000/api/transactions?limit=10", { headers })
       ]);
 
       setBills(billRes.data);
       setGoals(goalRes.data);
       setBudgets(budgRes.data);
       setUser(userRes.data);
+      setTransactions(txRes.data);
 
       const accountsList = accRes.data;
       setAccounts(accountsList);
@@ -253,114 +256,16 @@ export default function Dashboard({ onTransactionAdded }) {
         </div>
       </div>
 
-      {/* Grid Layout: Ingestion Tools & Commitments list */}
+      {/* Grid Layout: Ingestion Tools & Ledger & Commitments */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        {/* Column 1: Add Manual Transaction & Mock SMS */}
+        {/* Column 1: Money Mind Control Panel (Ingestion) */}
         <div className="glass-panel rounded-2xl p-6 space-y-6">
-          <div>
-            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-1">
-              <Plus className="w-4 h-4 text-primary" />
-              Remember Transaction
-            </h3>
-            <p className="text-[11px] text-gray-400">Log a new purchase directly into the Cognee graph database</p>
-          </div>
-
-          <form onSubmit={handleAddTransaction} className="space-y-4">
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Account</label>
-                <select
-                  value={accountId}
-                  onChange={(e) => setAccountId(e.target.value)}
-                  className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
-                >
-                  {accounts.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}
-                </select>
-              </div>
-              <div>
-                <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Amount (Rs)</label>
-                <input
-                  type="number"
-                  placeholder="e.g. 799"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                  className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Merchant</label>
-                <input
-                  type="text"
-                  placeholder="e.g. Netflix"
-                  value={merchant}
-                  onChange={(e) => setMerchant(e.target.value)}
-                  className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
-                  required
-                />
-              </div>
-              <div>
-                <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Category</label>
-                <select
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
-                >
-                  <option value="Food">Food</option>
-                  <option value="Shopping">Shopping</option>
-                  <option value="Utilities">Utilities</option>
-                  <option value="Entertainment">Entertainment</option>
-                  <option value="SIP">Investment / SIP</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <div>
-                <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Emotion / Sentiment</label>
-                <select
-                  value={sentiment}
-                  onChange={(e) => setSentiment(e.target.value)}
-                  className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
-                >
-                  <option value="Happy">🙂 Happy Purchase</option>
-                  <option value="Neutral">😐 Neutral</option>
-                  <option value="Regret">🙁 Regret Purchase</option>
-                </select>
-              </div>
-              <div>
-                <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Notes</label>
-                <input
-                  type="text"
-                  placeholder="e.g. Monthly subscription"
-                  value={note}
-                  onChange={(e) => setNote(e.target.value)}
-                  className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
-                />
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              disabled={btnLoading.add}
-              className="w-full bg-primary hover:bg-primary/95 text-background font-bold p-2.5 rounded-lg text-xs transition duration-200"
-            >
-              {btnLoading.add ? "Cognifying & Indexing..." : "Remember Transaction"}
-            </button>
-          </form>
-        </div>
-
-        {/* Column 2: Ingest CSV Statement & Mock SMS Webhook */}
-        <div className="glass-panel rounded-2xl p-6 space-y-6">
-          {/* CSV Import */}
+          {/* CSV/PDF Import */}
           <div>
             <h3 className="text-md font-bold text-white flex items-center gap-2 mb-1">
               <Upload className="w-4 h-4 text-indigo-400" />
-              Import Statement (CSV)
+              Import Statement (CSV/PDF)
             </h3>
             <p className="text-[11px] text-gray-400">Bulk ingest bank statement entries into the memory graph</p>
             
@@ -387,6 +292,102 @@ export default function Dashboard({ onTransactionAdded }) {
                 className="w-full bg-indigo-500 hover:bg-indigo-650 text-white font-bold p-2.5 rounded-lg text-xs transition"
               >
                 {btnLoading.csv ? "Uploading & Graphifying..." : "Upload Bank Statement"}
+              </button>
+            </form>
+          </div>
+
+          {/* Remember Transaction Form */}
+          <div className="border-t border-gray-800/80 pt-5">
+            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-1">
+              <Plus className="w-4 h-4 text-primary" />
+              Remember Transaction
+            </h3>
+            <p className="text-[11px] text-gray-400">Log a new purchase directly into the Cognee graph database</p>
+            
+            <form onSubmit={handleAddTransaction} className="space-y-3 mt-3">
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Account</label>
+                  <select
+                    value={accountId}
+                    onChange={(e) => setAccountId(e.target.value)}
+                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                  >
+                    {accounts.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Amount (Rs)</label>
+                  <input
+                    type="number"
+                    placeholder="e.g. 799"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Merchant</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Netflix"
+                    value={merchant}
+                    onChange={(e) => setMerchant(e.target.value)}
+                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Category</label>
+                  <select
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                  >
+                    <option value="Food">Food</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="SIP">Investment / SIP</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Sentiment</label>
+                  <select
+                    value={sentiment}
+                    onChange={(e) => setSentiment(e.target.value)}
+                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                  >
+                    <option value="Happy">🙂 Happy</option>
+                    <option value="Neutral">😐 Neutral</option>
+                    <option value="Regret">🙁 Regret</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Notes</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Subscription"
+                    value={note}
+                    onChange={(e) => setNote(e.target.value)}
+                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={btnLoading.add}
+                className="w-full bg-primary hover:bg-primary/95 text-background font-bold p-2.5 rounded-lg text-xs transition duration-200"
+              >
+                {btnLoading.add ? "Cognifying..." : "Remember Transaction"}
               </button>
             </form>
           </div>
@@ -422,9 +423,78 @@ export default function Dashboard({ onTransactionAdded }) {
                 disabled={btnLoading.sms || !smsText}
                 className="w-full bg-accent hover:bg-accent/90 text-background font-bold p-2.5 rounded-lg text-xs transition"
               >
-                {btnLoading.sms ? "Parsing SMS & Remembering..." : "Ingest Mock SMS"}
+                {btnLoading.sms ? "Parsing SMS..." : "Ingest Mock SMS"}
               </button>
             </form>
+          </div>
+        </div>
+
+        {/* Column 2: Connected Bank Accounts & Recent Bank Ledger */}
+        <div className="glass-panel rounded-2xl p-6 space-y-6">
+          {/* Accounts Breakdown */}
+          <div>
+            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-3">
+              <Wallet className="w-4 h-4 text-primary" />
+              Connected Bank Accounts
+            </h3>
+            <div className="space-y-2">
+              {accounts.map(acc => {
+                const isCredit = acc.type === "credit";
+                return (
+                  <div key={acc.id} className="bg-gray-900/40 border border-gray-800 rounded-xl p-3 flex justify-between items-center text-xs">
+                    <div>
+                      <span className="font-bold text-white block">{acc.name}</span>
+                      <span className="text-[10px] text-gray-500 capitalize">{acc.type} Account</span>
+                    </div>
+                    <div className="text-right">
+                      <span className={`font-bold ${isCredit ? "text-danger-300" : "text-primary"}`}>
+                        Rs. {acc.balance.toLocaleString()}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Recent Ingested Transactions Ledger */}
+          <div className="border-t border-gray-800/80 pt-5">
+            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-3">
+              <Clock className="w-4 h-4 text-indigo-400" />
+              Recent Bank Ledger
+            </h3>
+            <div className="space-y-2 max-h-[300px] overflow-y-auto pr-1">
+              {transactions.length === 0 ? (
+                <div className="text-center py-12 text-gray-500 text-xs">
+                  No statement transactions found. Use the panel on the left to upload a statement.
+                </div>
+              ) : (
+                transactions.slice(0, 10).map(tx => {
+                  const isDebit = tx.amount > 0;
+                  const isRegret = tx.sentiment === "Regret";
+                  const isHappy = tx.sentiment === "Happy";
+                  
+                  return (
+                    <div key={tx.id} className="bg-gray-900/30 border border-gray-800/50 rounded-xl p-2.5 flex justify-between items-center text-xs hover:border-gray-700/40 transition">
+                      <div className="min-w-0 flex-1 pr-2">
+                        <span className="font-semibold text-gray-200 block truncate">{tx.merchant}</span>
+                        <span className="text-[9px] text-gray-500 flex items-center gap-1.5 mt-0.5">
+                          {tx.date} • {tx.category}
+                          <span className={`w-1.5 h-1.5 rounded-full ${
+                            isRegret ? "bg-danger" : isHappy ? "bg-primary" : "bg-gray-600"
+                          }`} title={`Sentiment: ${tx.sentiment}`} />
+                        </span>
+                      </div>
+                      <div className="text-right shrink-0">
+                        <span className={`font-bold ${isDebit ? "text-gray-300" : "text-primary"}`}>
+                          {isDebit ? "-" : "+"} Rs. {Math.abs(tx.amount).toLocaleString()}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })
+              )}
+            </div>
           </div>
         </div>
 
