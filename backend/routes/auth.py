@@ -57,18 +57,13 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     return encoded_jwt
 
 async def get_current_user(request: Request, db: Session = Depends(get_db)) -> User:
-    # Default user is "demo"
-    default_user = db.query(User).filter(User.username == "demo").first()
-    
     auth_header = request.headers.get("Authorization")
     if not auth_header or not auth_header.startswith("Bearer "):
-        if default_user:
-            return default_user
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Demo user not configured. Please initialize database first."
+            detail="Could not validate credentials"
         )
-        
+
     token = auth_header.split(" ")[1]
     try:
         payload = jwt.decode(token, Config.SECRET_KEY, algorithms=[Config.ALGORITHM])
@@ -79,10 +74,7 @@ async def get_current_user(request: Request, db: Session = Depends(get_db)) -> U
                 return user
     except JWTError:
         pass
-        
-    if default_user:
-        return default_user
-        
+
     raise HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials"
@@ -110,16 +102,7 @@ def register(user_data: UserRegister, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_user)
 
-    # Initialize a default checking account for the new user
-    default_acc = Account(
-        user_id=new_user.id,
-        name="Checking Account",
-        type="checking",
-        balance=user_data.monthly_income  # Default balance is monthly income
-    )
-    db.add(default_acc)
-    db.commit()
-    
+    # No default account is created. Wait for user to upload statement.
     return new_user
 
 @router.post("/login", response_model=Token)

@@ -1,3 +1,4 @@
+import io
 import os
 import sys
 import unittest
@@ -93,6 +94,36 @@ class TestMoneyMindAPI(unittest.TestCase):
         self.assertIn("decision", data)
         self.assertIn("reasons", data)
         self.assertIn("response_text", data)
+        self.assertIn("thinking_path", data)
+        self.assertIsInstance(data["thinking_path"].get("recalled_memories", []), list)
+
+    def test_import_csv_endpoint(self):
+        login_res = self.client.post("/api/auth/login", data={
+            "username": "demo",
+            "password": "demo123"
+        })
+        self.assertEqual(login_res.status_code, 200)
+        token = login_res.json()["access_token"]
+
+        db = SessionLocal()
+        account = db.query(Account).first()
+        db.close()
+        self.assertIsNotNone(account)
+
+        csv_content = (
+            "date,merchant,category,amount,sentiment,note\n"
+            "2026-06-30,Example Store,Shopping,1200,Regret,Imported from CSV\n"
+        )
+
+        res = self.client.post(
+            "/api/transactions/import-csv",
+            data={"account_id": str(account.id)},
+            files={"file": ("statement.csv", csv_content, "text/csv")},
+            headers={"Authorization": f"Bearer {token}"}
+        )
+
+        self.assertEqual(res.status_code, 200)
+        self.assertIn("ingested", res.json()["message"].lower())
 
 if __name__ == "__main__":
     unittest.main()

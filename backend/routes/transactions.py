@@ -110,10 +110,19 @@ async def create_transaction(
         note=new_tx.note
     )
 
+@router.post("/import-csv")
+async def import_csv(
+    file: UploadFile = File(...),
+    account_id: int = Form(0),
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+):
+    return await upload_csv(file=file, account_id=account_id, current_user=current_user, db=db)
+
 @router.post("/upload-csv")
 async def upload_csv(
     file: UploadFile = File(...),
-    account_id: int = Form(...),
+    account_id: int = Form(0),
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ):
@@ -176,9 +185,24 @@ async def upload_csv(
             db.refresh(account)
             print(f"Dynamically created bank account: {bank_name}")
     else:
-        account = db.query(Account).filter(Account.id == account_id, Account.user_id == current_user.id).first()
-        if not account:
-            raise HTTPException(status_code=404, detail="Account not found")
+        if account_id == 0:
+            bank_name = "Imported Account"
+            account = db.query(Account).filter(Account.user_id == current_user.id, Account.name == bank_name).first()
+            if not account:
+                account = Account(
+                    user_id=current_user.id,
+                    name=bank_name,
+                    type="checking",
+                    balance=0.0
+                )
+                db.add(account)
+                db.commit()
+                db.refresh(account)
+                print("Created fallback Imported Account.")
+        else:
+            account = db.query(Account).filter(Account.id == account_id, Account.user_id == current_user.id).first()
+            if not account:
+                raise HTTPException(status_code=404, detail="Account not found")
 
     # 3. Parse content based on file type
     if filename_lower.endswith(".pdf"):

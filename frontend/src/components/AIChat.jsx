@@ -76,14 +76,14 @@ export default function AIChat() {
   ];
 
   return (
-    <div className="glass-panel rounded-2xl flex flex-col h-[580px] overflow-hidden">
+    <div className="glass-panel rounded-lg flex flex-col h-[580px] overflow-hidden">
       {/* Header */}
-      <div className="p-4 border-b border-gray-800 flex items-center gap-2 bg-gray-900/30">
+      <div className="p-4 border-b border-white/10 flex items-center gap-2 bg-background">
         <Brain className="w-5 h-5 text-primary animate-pulse" />
         <div>
-          <h3 className="text-sm font-bold text-white">MoneyMind Memory Brain</h3>
-          <span className="text-[10px] text-primary font-semibold flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
+          <h3 className="text-sm font-bold text-white uppercase tracking-wider">MoneyMind Memory Brain</h3>
+          <span className="text-[10px] text-primary font-mono uppercase tracking-widest flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-none bg-primary animate-ping" />
             Cognee Connected (sqlite + lancedb + kuzu)
           </span>
         </div>
@@ -103,10 +103,10 @@ export default function AIChat() {
               
               <div className="max-w-[85%] space-y-2">
                 {/* Content Bubble */}
-                <div className={`p-3.5 rounded-2xl text-xs leading-relaxed ${
+                <div className={`p-3.5 rounded-md text-xs leading-relaxed font-mono ${
                   isBot 
-                    ? "bg-gray-900 border border-gray-800 text-gray-200" 
-                    : "bg-primary text-background font-medium"
+                    ? "bg-background border border-white/10 text-gray-300" 
+                    : "bg-primary text-black font-bold"
                 }`}>
                   {msg.content}
 
@@ -132,7 +132,7 @@ export default function AIChat() {
 
                   {/* Reasons list */}
                   {isBot && msg.reasons && msg.reasons.length > 0 && (
-                    <ul className="mt-3 space-y-1 text-[11px] text-gray-300 list-disc list-inside border-t border-gray-800/80 pt-2.5">
+                    <ul className="mt-3 space-y-1 text-[11px] text-gray-400 list-disc list-inside border-t border-white/10 pt-2.5 uppercase">
                       {msg.reasons.map((r, rIdx) => (
                         <li key={rIdx}>{r}</li>
                       ))}
@@ -141,7 +141,7 @@ export default function AIChat() {
 
                   {/* Mood Regret Warning */}
                   {isBot && msg.mood_warning && (
-                    <div className="mt-3 bg-danger/10 border border-danger/20 rounded-xl p-2.5 flex gap-2 items-start text-[11px] text-danger-300">
+                    <div className="mt-3 bg-danger/10 border border-dashed border-danger/50 rounded-md p-2.5 flex gap-2 items-start text-[10px] text-danger uppercase tracking-wider">
                       <AlertTriangle className="w-3.5 h-3.5 text-danger shrink-0 mt-0.5" />
                       <span>{msg.mood_warning}</span>
                     </div>
@@ -150,25 +150,25 @@ export default function AIChat() {
 
                 {/* Exposing the Cognee Thinking Path */}
                 {isBot && msg.thinking && (
-                  <details className="bg-black/30 border border-gray-800/50 rounded-xl p-2.5 text-[10px] transition hover:border-gray-700/50">
+                  <details className="bg-black/30 border border-white/10 rounded-md p-2.5 text-[10px] uppercase tracking-wider transition hover:border-primary/50">
                     <summary className="cursor-pointer text-gray-400 font-bold hover:text-white flex items-center gap-1 select-none">
-                      <Brain className="w-3 h-3 text-indigo-400" />
+                      <Brain className="w-3 h-3 text-secondary" />
                       Expose Cognee Memory Path
                     </summary>
-                    <div className="mt-2 space-y-2 text-gray-300 pl-4 border-l border-gray-800">
+                    <div className="mt-2 space-y-2 text-gray-300 pl-4 border-l border-white/10">
                       <div>
-                        <strong className="text-indigo-400 block mb-0.5">Recalled from Cognee:</strong>
+                        <strong className="text-secondary block mb-0.5">Recalled from Cognee:</strong>
                         {msg.thinking.recalled_memories && msg.thinking.recalled_memories.length > 0 ? (
-                          <ul className="list-disc list-inside space-y-1">
+                          <ul className="list-disc list-inside space-y-1 text-gray-400">
                             {msg.thinking.recalled_memories.map((m, mIdx) => (
-                              <li key={mIdx} className="italic text-gray-400">"{m}"</li>
+                              <li key={mIdx}>"{m}"</li>
                             ))}
                           </ul>
                         ) : (
                           <span className="text-gray-500 italic">No semantic graph matching nodes found. Search fallback complete.</span>
                         )}
                       </div>
-                      <div className="grid grid-cols-2 gap-2 text-[9px] pt-1.5 border-t border-gray-800/50">
+                      <div className="grid grid-cols-2 gap-2 text-[9px] pt-1.5 border-t border-white/10">
                         <div>
                           <strong className="text-gray-400 block">Metadata Check:</strong>
                           <span>{msg.thinking.checked_assets}</span>
@@ -197,10 +197,10 @@ export default function AIChat() {
             <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 shrink-0">
               <Bot className="w-4 h-4 text-primary animate-pulse" />
             </div>
-            <div className="p-3 bg-gray-900 border border-gray-800 rounded-2xl flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" style={{ animationDelay: "0ms" }} />
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" style={{ animationDelay: "150ms" }} />
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" style={{ animationDelay: "300ms" }} />
+            <div className="p-3 bg-background border border-white/10 rounded-md flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-none bg-primary animate-bounce" style={{ animationDelay: "0ms" }} />
+              <span className="w-1.5 h-1.5 rounded-none bg-primary animate-bounce" style={{ animationDelay: "150ms" }} />
+              <span className="w-1.5 h-1.5 rounded-none bg-primary animate-bounce" style={{ animationDelay: "300ms" }} />
             </div>
           </div>
         )}
@@ -209,7 +209,7 @@ export default function AIChat() {
 
       {/* Quick Prompts Panel */}
       {messages.length === 1 && (
-        <div className="p-4 border-t border-gray-800/80 bg-gray-900/10 space-y-2">
+        <div className="p-4 border-t border-white/10 bg-background space-y-2">
           <span className="text-[10px] uppercase font-bold text-gray-500 tracking-wider flex items-center gap-1">
             <Info className="w-3 h-3" /> Quick Scenario Prompts
           </span>
@@ -218,7 +218,7 @@ export default function AIChat() {
               <button
                 key={i}
                 onClick={() => handleSend(p)}
-                className="text-left p-2 bg-gray-900/60 border border-gray-800/80 hover:border-gray-700 hover:bg-gray-900 text-[11px] text-gray-300 rounded-xl transition"
+                className="text-left p-2 bg-background border border-dashed border-white/10 hover:border-primary/50 hover:text-primary text-[10px] uppercase tracking-wider text-gray-400 rounded-md transition-colors"
               >
                 {p}
               </button>
@@ -230,19 +230,19 @@ export default function AIChat() {
       {/* Input Form */}
       <form 
         onSubmit={(e) => { e.preventDefault(); handleSend(); }}
-        className="p-4 border-t border-gray-800 bg-gray-900/40 flex gap-2"
+        className="p-4 border-t border-white/10 bg-background flex gap-2"
       >
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask MoneyMind if you can afford a purchase..."
-          className="flex-1 bg-black/40 border border-gray-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-primary/50"
+          className="flex-1 bg-background border border-white/10 rounded-md px-4 py-2.5 text-xs text-white uppercase tracking-wider focus:outline-none focus:border-primary/50 transition-colors"
         />
         <button
           type="submit"
           disabled={loading || !input.trim()}
-          className="px-4 py-2.5 bg-primary hover:bg-primary/90 disabled:opacity-50 text-background font-bold rounded-xl flex items-center justify-center transition"
+          className="px-4 py-2.5 border border-dashed border-primary/50 bg-transparent hover:bg-primary disabled:opacity-50 hover:text-black text-primary font-bold rounded-md flex items-center justify-center transition-colors"
         >
           <Send className="w-4 h-4" />
         </button>

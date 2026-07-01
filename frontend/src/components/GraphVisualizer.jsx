@@ -131,20 +131,20 @@ export default function GraphVisualizer({ refreshTrigger }) {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 font-mono">
       {/* SVG Canvas */}
-      <div className="lg:col-span-3 glass-panel rounded-2xl p-6 relative overflow-hidden flex flex-col min-h-[480px]">
-        <div className="flex items-center justify-between mb-4 z-10">
+      <div className="lg:col-span-3 glass-panel rounded-lg p-6 relative overflow-hidden flex flex-col min-h-[480px]">
+        <div className="flex items-center justify-between mb-4 z-10 border-b border-white/10 pb-4">
           <div>
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+            <h3 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
               <Network className="w-5 h-5 text-primary" />
               Cognee-Generated Memory Graph
             </h3>
-            <p className="text-xs text-gray-400">Interactive live view of extracted financial entities & relationships</p>
+            <p className="text-[10px] text-gray-500 mt-1 uppercase">Interactive live view of extracted financial entities & relationships</p>
           </div>
           <button 
             onClick={fetchGraph}
-            className="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-xs font-semibold rounded-lg transition"
+            className="px-3 py-1.5 border border-dashed border-white/20 hover:border-primary/50 text-[10px] uppercase tracking-wider text-gray-400 hover:text-primary rounded-md transition-colors"
           >
             Refresh Graph
           </button>
@@ -250,22 +250,22 @@ export default function GraphVisualizer({ refreshTrigger }) {
         )}
 
         {/* Legend */}
-        <div className="flex flex-wrap gap-3 mt-2 text-[10px] text-gray-400 border-t border-gray-800/50 pt-3">
-          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-primary" /> User</div>
-          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#f59e0b]" /> Goals</div>
-          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#6366f1]" /> Obligations</div>
-          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#3b82f6]" /> Transactions</div>
-          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#a855f7]" /> Merchants</div>
-          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#ec4899]" /> Categories</div>
-          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-full bg-[#ef4444]" /> Sentiments</div>
+        <div className="flex flex-wrap gap-3 mt-2 text-[9px] uppercase tracking-wider text-gray-500 border-t border-white/10 pt-3">
+          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-none bg-primary" /> User</div>
+          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-none bg-[#f59e0b]" /> Goals</div>
+          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-none bg-[#6366f1]" /> Obligations</div>
+          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-none bg-[#3b82f6]" /> Transactions</div>
+          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-none bg-[#a855f7]" /> Merchants</div>
+          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-none bg-[#ec4899]" /> Categories</div>
+          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-none bg-[#ef4444]" /> Sentiments</div>
         </div>
       </div>
 
       {/* Selected Node Details Panel */}
-      <div className="glass-panel rounded-2xl p-6 flex flex-col justify-between">
+      <div className="glass-panel rounded-lg p-6 flex flex-col justify-between">
         <div>
-          <h3 className="text-md font-bold text-white flex items-center gap-2 mb-4 border-b border-gray-800 pb-2">
-            <Info className="w-4 h-4 text-indigo-400" />
+          <h3 className="text-xs uppercase font-bold text-white tracking-wider flex items-center gap-2 mb-4 border-b border-white/10 pb-4">
+            <Info className="w-4 h-4 text-primary" />
             Memory Inspector
           </h3>
 
@@ -297,13 +297,13 @@ export default function GraphVisualizer({ refreshTrigger }) {
               </div>
 
               {selectedNode.properties && Object.keys(selectedNode.properties).length > 0 && (
-                <div className="border-t border-gray-800/80 pt-3">
-                  <span className="text-[10px] uppercase font-bold text-gray-400 block tracking-wider mb-2">Properties</span>
-                  <div className="bg-black/30 rounded-lg p-2.5 space-y-2 text-xs">
+                <div className="border-t border-white/10 pt-3">
+                  <span className="text-[10px] uppercase font-bold text-gray-500 block tracking-wider mb-2">Properties</span>
+                  <div className="bg-background border border-white/10 rounded-md p-2.5 space-y-2 text-[10px] uppercase tracking-wider">
                     {Object.entries(selectedNode.properties).map(([k, v]) => (
                       <div key={k} className="flex justify-between gap-2">
-                        <span className="text-gray-400 capitalize">{k.replace('_', ' ')}:</span>
-                        <span className="text-gray-200 font-medium text-right break-all">{v ? String(v) : "N/A"}</span>
+                        <span className="text-gray-500 capitalize">{k.replace('_', ' ')}:</span>
+                        <span className="text-gray-300 font-bold text-right break-all">{v ? String(v) : "N/A"}</span>
                       </div>
                     ))}
                   </div>
@@ -312,17 +312,17 @@ export default function GraphVisualizer({ refreshTrigger }) {
             </div>
           ) : (
             <div className="flex-1 flex flex-col items-center justify-center text-center py-12 text-gray-500">
-              <Network className="w-10 h-10 mb-3 text-gray-600 animate-pulse" />
-              <p className="text-xs">Click a node in the Cognee memory graph to inspect its properties and linkages.</p>
+              <Network className="w-10 h-10 mb-3 text-gray-600 animate-pulse border border-dashed border-white/10 p-2 rounded-md" />
+              <p className="text-[10px] uppercase tracking-wider">Click a node in the Cognee memory graph to inspect its properties and linkages.</p>
             </div>
           )}
         </div>
 
         {selectedNode?.properties?.sentiment === "Regret" && (
-          <div className="mt-4 bg-danger/10 border border-danger/20 rounded-xl p-3 flex gap-2 items-start">
+          <div className="mt-4 bg-danger/10 border border-dashed border-danger/30 rounded-md p-3 flex gap-2 items-start">
             <ShieldAlert className="w-4 h-4 text-danger shrink-0 mt-0.5" />
-            <p className="text-[10px] text-danger-300">
-              <strong>Impulse Danger Detected</strong>: This merchant/category has a past emotion marked as Regret. The AI agent will discourage similar transactions.
+            <p className="text-[9px] uppercase tracking-wider text-danger font-bold">
+              Impulse Danger Detected: This merchant/category has a past emotion marked as Regret. The AI agent will discourage similar transactions.
             </p>
           </div>
         )}

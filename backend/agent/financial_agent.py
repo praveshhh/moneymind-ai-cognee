@@ -1,4 +1,5 @@
 import json
+import re
 import httpx
 import logging
 from datetime import datetime, timedelta
@@ -32,6 +33,89 @@ Your response MUST be valid JSON matching the following structure:
   "response_text": "A friendly conversational explanation summarizing the decision."
 }
 """
+
+def extract_amount_from_message(message: str) -> float | None:
+    amount_patterns = [
+        r"(?:rs\.?|inr\.?|usd\.?|\$)\s*([0-9,]+(?:\.[0-9]+)?)",
+        r"([0-9,]+(?:\.[0-9]+)?)\s*(?:rupees|rs|inr|usd|dollars)?",
+    ]
+    for pattern in amount_patterns:
+        match = re.search(pattern, message, flags=re.IGNORECASE)
+        if match:
+            try:
+                return float(match.group(1).replace(",", ""))
+            except ValueError:
+                continue
+    return None
+
+
+def format_currency(amount: float) -> str:
+    return f"Rs. {amount:,.2f}"
+
+
+def build_local_analysis(user_message: str, amount_requested: float | None, total_checking_savings: float,
+                         total_upcoming_obligations: float, upcoming_bills: list[dict], recalled_memories: list[str]) -> dict:
+    projected_balance = total_checking_savings - total_upcoming_obligations
+    mood_warning = ""
+    if any("regret" in mem.lower() for mem in recalled_memories):
+        mood_warning = "I found past purchases that were marked as regretful, so similar spending may be risky."
+
+    if amount_requested is None:
+        decision = "Risk" if any(term in user_message.lower() for term in ["buy", "purchase", "spend"]) else "Safe"
+        reasons = [
+            "Could not detect a specific purchase amount from your request.",
+            f"Current available cash is {format_currency(total_checking_savings)} and upcoming obligations due soon are {format_currency(total_upcoming_obligations)}."
+        ]
+        simulated_balance_after_purchase = projected_balance
+        response_text = (
+            "I couldn't identify a specific amount from your question, but I checked your cashflow and upcoming bills. "
+            "Please ask again with a clear amount, like 'Can I buy a laptop for Rs. 20,000?'"
+        )
+    else:
+        simulated_balance_after_purchase = total_checking_savings - amount_requested
+        if amount_requested > projected_balance:
+            decision = "Unsafe"
+            reasons = [
+                f"A purchase of {format_currency(amount_requested)} would leave you below the amount needed to cover upcoming bills ({format_currency(total_upcoming_obligations)}).",
+                "Your short-term cashflow is too tight to safely make this purchase."
+            ]
+        elif amount_requested > total_checking_savings * 0.4:
+            decision = "Risk"
+            reasons = [
+                f"This purchase is large relative to your available liquidity ({format_currency(total_checking_savings)}).",
+                "I recommend checking your upcoming obligations before committing to it."
+            ]
+        else:
+            decision = "Safe"
+            reasons = [
+                f"You can afford the purchase and still cover upcoming obligations of {format_currency(total_upcoming_obligations)}.",
+                "Your current cash position is strong enough for this transaction."
+            ]
+        response_text = (
+            f"Based on your current balance and upcoming bills, a purchase of {format_currency(amount_requested)} is evaluated as {decision}. "
+            f"Projected balance after the purchase would be {format_currency(simulated_balance_after_purchase)}."
+        )
+
+    if upcoming_bills:
+        response_text += " I also reviewed your upcoming bills, so this recommendation includes short-term cashflow."
+
+    return {
+        "decision": decision,
+        "reasons": reasons,
+        "simulated_balance_after_purchase": simulated_balance_after_purchase,
+        "mood_warning": mood_warning,
+        "response_text": response_text,
+        "thinking_path": {
+            "recalled_memories": recalled_memories,
+            "checked_assets": f"Liquidity: {format_currency(total_checking_savings)}, Bills: {format_currency(total_upcoming_obligations)}",
+            "goals_scanned": 0,
+            "cashflow_projection_45d": {
+                "starting_balance": total_checking_savings,
+                "upcoming_obligations": total_upcoming_obligations,
+                "projected_balance": projected_balance
+            }
+        }
+    }
 
 async def call_llm(system_prompt: str, user_prompt: str) -> str:
     """
@@ -143,6 +227,15 @@ async def analyze_purchase_request(db: Session, user_id: int, user_message: str)
     # We recall past financial behaviors, regret patterns, and related merchants from Cognee
     recalled_memories = await recall_financial_context(user_id, query=user_message)
     
+    # Build a simple 45-day cashflow projection based on upcoming obligations.
+    projection_days = 45
+    projection_date = today + timedelta(days=projection_days)
+    projection_obligations = [b for b in upcoming_bills if b.due_date <= projection_date]
+    projection_total = sum(b.amount for b in projection_obligations)
+    projected_balance = total_checking_savings - projection_total
+    
+    amount_requested = extract_amount_from_message(user_message)
+    
     # 3. Assemble User Prompt for LLM
     financial_context = {
         "user_message": user_message,
@@ -159,7 +252,15 @@ async def analyze_purchase_request(db: Session, user_id: int, user_message: str)
             "details": bills_list
         },
         "active_savings_goals": goals_list,
-        "recalled_memories_from_cognee": recalled_memories
+        "recalled_memories_from_cognee": recalled_memories,
+        "cashflow_projection_45_days": {
+            "starting_balance": total_checking_savings,
+            "projection_date": str(projection_date),
+            "projected_obligations": projection_total,
+            "projected_balance": projected_balance,
+            "obligations": bills_list
+        },
+        "amount_requested": amount_requested
     }
     
     user_prompt = json.dumps(financial_context, indent=2)
@@ -174,16 +275,21 @@ async def analyze_purchase_request(db: Session, user_id: int, user_message: str)
         analysis_result["thinking_path"] = {
             "recalled_memories": recalled_memories,
             "checked_assets": f"Liquidity: {total_checking_savings}, Bills: {total_upcoming_obligations}",
-            "goals_scanned": len(goals_list)
+            "goals_scanned": len(goals_list),
+            "cashflow_projection_45d": {
+                "starting_balance": total_checking_savings,
+                "projected_obligations": projection_total,
+                "projected_balance": projected_balance
+            }
         }
         return analysis_result
     except Exception as e:
         logger.error(f"Failed to parse LLM json response: {raw_response}. Error: {str(e)}")
-        return {
-            "decision": "Risk",
-            "reasons": ["Failed to structure AI reasoning"],
-            "simulated_balance_after_purchase": total_checking_savings,
-            "mood_warning": "",
-            "response_text": "I analyzed your request, but I'm having trouble formatting the response. " + raw_response,
-            "thinking_path": {"recalled_memories": recalled_memories}
-        }
+        return build_local_analysis(
+            user_message=user_message,
+            amount_requested=amount_requested,
+            total_checking_savings=total_checking_savings,
+            total_upcoming_obligations=total_upcoming_obligations,
+            upcoming_bills=bills_list,
+            recalled_memories=recalled_memories
+        )

@@ -110,16 +110,16 @@ export default function Dashboard({ onTransactionAdded }) {
 
   const handleCsvUpload = async (e) => {
     e.preventDefault();
-    if (!csvFile || !csvAccountId) return;
+    if (!csvFile) return;
     setBtnLoading(prev => ({ ...prev, csv: true }));
 
     const formData = new FormData();
     formData.append("file", csvFile);
-    formData.append("account_id", csvAccountId);
+    formData.append("account_id", csvAccountId || "0");
 
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.post("http://localhost:8000/api/transactions/upload-csv", formData, {
+      const res = await axios.post("http://localhost:8000/api/transactions/import-csv", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data"
@@ -194,69 +194,69 @@ export default function Dashboard({ onTransactionAdded }) {
       {/* Grid: Assets Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Card 1: Balance */}
-        <div className="glass-panel rounded-2xl p-5 relative overflow-hidden glass-card-glow-green">
+        <div className="glass-panel rounded-lg p-5 relative overflow-hidden glass-card-glow-green">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider block">
                 {accounts.length === 1 ? `${accounts[0].name} Balance` : "Total Cash & Savings"}
               </span>
-              <h2 className="text-2xl font-extrabold text-white mt-1">Rs. {checkingBal.toLocaleString()}</h2>
+              <h2 className="text-2xl font-bold text-white mt-1">Rs. {checkingBal.toLocaleString()}</h2>
             </div>
-            <div className="p-2.5 bg-primary/10 rounded-xl border border-primary/20">
+            <div className="p-2.5 bg-background border border-primary/20 rounded-md">
               <Wallet className="w-5 h-5 text-primary" />
             </div>
           </div>
           <div className="mt-3 flex items-center gap-1">
-            <span className="text-[10px] text-gray-400 leading-normal">Your current available savings balance.</span>
+            <span className="text-[10px] text-gray-500 leading-normal uppercase">Your current available savings balance.</span>
           </div>
         </div>
 
         {/* Card 2: Total Inflow */}
-        <div className="glass-panel rounded-2xl p-5 relative overflow-hidden glass-card-glow-green">
+        <div className="glass-panel rounded-lg p-5 relative overflow-hidden glass-card-glow-green">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Total Inflow / Deposits</span>
-              <h2 className="text-2xl font-extrabold text-white mt-1">Rs. {totalIncome.toLocaleString()}</h2>
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider block">Total Inflow / Deposits</span>
+              <h2 className="text-2xl font-bold text-white mt-1">Rs. {totalIncome.toLocaleString()}</h2>
             </div>
-            <div className="p-2.5 bg-primary/10 rounded-xl border border-primary/20">
+            <div className="p-2.5 bg-background border border-primary/20 rounded-md">
               <Plus className="w-5 h-5 text-primary" />
             </div>
           </div>
           <div className="mt-3 flex items-center gap-1">
-            <span className="text-[10px] text-gray-400 leading-normal">Total money received from statement.</span>
+            <span className="text-[10px] text-gray-500 leading-normal uppercase">Total money received from statement.</span>
           </div>
         </div>
 
         {/* Card 3: Total Outflow */}
-        <div className="glass-panel rounded-2xl p-5 relative overflow-hidden">
+        <div className="glass-panel rounded-lg p-5 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Total Outflow / Expenses</span>
-              <h2 className="text-2xl font-extrabold text-white mt-1 font-semibold text-danger-300">Rs. {totalExpenses.toLocaleString()}</h2>
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider block">Total Outflow / Expenses</span>
+              <h2 className="text-2xl font-bold text-danger-400 mt-1">Rs. {totalExpenses.toLocaleString()}</h2>
             </div>
-            <div className="p-2.5 bg-danger/10 rounded-xl border border-danger/20">
+            <div className="p-2.5 bg-background border border-danger/20 rounded-md">
               <AlertTriangle className="w-5 h-5 text-danger" />
             </div>
           </div>
           <div className="mt-3 flex items-center gap-1">
-            <span className="text-[10px] text-gray-400 leading-normal">Total money spent from statement.</span>
+            <span className="text-[10px] text-gray-500 leading-normal uppercase">Total money spent from statement.</span>
           </div>
         </div>
 
         {/* Card 4: Savings Rate */}
-        <div className="glass-panel rounded-2xl p-5 relative overflow-hidden">
+        <div className="glass-panel rounded-lg p-5 relative overflow-hidden">
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Real Savings Rate</span>
-              <h2 className="text-2xl font-extrabold text-white mt-1">{savingsRate}%</h2>
+              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider block">Real Savings Rate</span>
+              <h2 className="text-2xl font-bold text-white mt-1">{savingsRate}%</h2>
             </div>
-            <div className="p-2.5 bg-accent/10 rounded-xl border border-accent/20">
+            <div className="p-2.5 bg-background border border-accent/20 rounded-md">
               <Percent className="w-5 h-5 text-accent" />
             </div>
           </div>
           {/* Progress bar */}
-          <div className="w-full bg-gray-800 rounded-full h-1.5 mt-3">
-            <div className="bg-accent h-1.5 rounded-full" style={{ width: `${savingsRate}%` }} />
+          <div className="w-full bg-background border border-white/10 rounded-full h-1 mt-3 relative overflow-hidden">
+            <div className="bg-accent h-1 absolute left-0 top-0" style={{ width: `${savingsRate}%` }} />
           </div>
         </div>
       </div>
@@ -265,21 +265,22 @@ export default function Dashboard({ onTransactionAdded }) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Column 1: Money Mind Control Panel (Ingestion) */}
-        <div className="glass-panel rounded-2xl p-6 space-y-6">
+        <div className="glass-panel rounded-lg p-6 space-y-6">
           {/* CSV/PDF Import */}
           <div>
-            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-1">
-              <Upload className="w-4 h-4 text-indigo-400" />
-              Import Statement (CSV/PDF)
+            <h3 className="text-xs uppercase font-bold text-white flex items-center gap-2 mb-1 tracking-wider">
+              <Upload className="w-4 h-4 text-primary" />
+              Import Statement
             </h3>
-            <p className="text-[11px] text-gray-400">Bulk ingest bank statement entries into the memory graph</p>
+            <p className="text-[10px] text-gray-500 uppercase">Bulk ingest bank statement entries into the memory graph</p>
             
             <form onSubmit={handleCsvUpload} className="space-y-3 mt-3">
               <select
                 value={csvAccountId}
                 onChange={(e) => setCsvAccountId(e.target.value)}
-                className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                className="w-full bg-background border border-white/10 rounded-md p-2 text-xs text-gray-300 uppercase focus:outline-none focus:border-primary/50 transition-colors"
               >
+                <option value="">Auto-Detect Bank Account</option>
                 {accounts.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}
               </select>
               
@@ -287,48 +288,48 @@ export default function Dashboard({ onTransactionAdded }) {
                 type="file"
                 accept=".csv,.pdf"
                 onChange={(e) => setCsvFile(e.target.files[0])}
-                className="w-full text-xs text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-gray-800 file:text-white hover:file:bg-gray-750"
+                className="w-full text-xs text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-[10px] file:uppercase file:tracking-wider file:font-bold file:bg-background file:border file:border-white/10 file:text-gray-300 hover:file:bg-white/5 transition-colors"
                 required
               />
               
               <button
                 type="submit"
                 disabled={btnLoading.csv || !csvFile}
-                className="w-full bg-indigo-500 hover:bg-indigo-650 text-white font-bold p-2.5 rounded-lg text-xs transition"
+                className="w-full bg-transparent border border-dashed border-primary/50 hover:bg-primary hover:text-black text-primary font-bold p-2.5 rounded-md text-[10px] uppercase tracking-widest transition-colors"
               >
-                {btnLoading.csv ? "Uploading & Graphifying..." : "Upload Bank Statement"}
+                {btnLoading.csv ? "Uploading..." : "Upload Bank Statement"}
               </button>
             </form>
           </div>
 
           {/* Remember Transaction Form */}
-          <div className="border-t border-gray-800/80 pt-5">
-            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-1">
+          <div className="border-t border-white/10 pt-5">
+            <h3 className="text-xs uppercase font-bold text-white flex items-center gap-2 mb-1 tracking-wider">
               <Plus className="w-4 h-4 text-primary" />
               Remember Transaction
             </h3>
-            <p className="text-[11px] text-gray-400">Log a new purchase directly into the Cognee graph database</p>
+            <p className="text-[10px] text-gray-500 uppercase">Log a new purchase directly into the Cognee graph</p>
             
             <form onSubmit={handleAddTransaction} className="space-y-3 mt-3">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Account</label>
+                  <label className="text-[9px] uppercase font-bold text-gray-500 block mb-1">Account</label>
                   <select
                     value={accountId}
                     onChange={(e) => setAccountId(e.target.value)}
-                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                    className="w-full bg-background border border-white/10 rounded-md p-2 text-xs text-gray-300 focus:outline-none focus:border-primary/50 transition-colors"
                   >
                     {accounts.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Amount (Rs)</label>
+                  <label className="text-[9px] uppercase font-bold text-gray-500 block mb-1">Amount (Rs)</label>
                   <input
                     type="number"
                     placeholder="e.g. 799"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
-                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                    className="w-full bg-background border border-white/10 rounded-md p-2 text-xs text-gray-300 focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-700"
                     required
                   />
                 </div>
@@ -336,22 +337,22 @@ export default function Dashboard({ onTransactionAdded }) {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Merchant</label>
+                  <label className="text-[9px] uppercase font-bold text-gray-500 block mb-1">Merchant</label>
                   <input
                     type="text"
                     placeholder="e.g. Netflix"
                     value={merchant}
                     onChange={(e) => setMerchant(e.target.value)}
-                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                    className="w-full bg-background border border-white/10 rounded-md p-2 text-xs text-gray-300 focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-700"
                     required
                   />
                 </div>
                 <div>
-                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Category</label>
+                  <label className="text-[9px] uppercase font-bold text-gray-500 block mb-1">Category</label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                    className="w-full bg-background border border-white/10 rounded-md p-2 text-xs text-gray-300 focus:outline-none focus:border-primary/50 transition-colors"
                   >
                     <option value="Food">Food</option>
                     <option value="Shopping">Shopping</option>
@@ -364,25 +365,25 @@ export default function Dashboard({ onTransactionAdded }) {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Sentiment</label>
+                  <label className="text-[9px] uppercase font-bold text-gray-500 block mb-1">Sentiment</label>
                   <select
                     value={sentiment}
                     onChange={(e) => setSentiment(e.target.value)}
-                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                    className="w-full bg-background border border-white/10 rounded-md p-2 text-xs text-gray-300 focus:outline-none focus:border-primary/50 transition-colors"
                   >
-                    <option value="Happy">🙂 Happy</option>
-                    <option value="Neutral">😐 Neutral</option>
-                    <option value="Regret">🙁 Regret</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Neutral">Neutral</option>
+                    <option value="Regret">Regret</option>
                   </select>
                 </div>
                 <div>
-                  <label className="text-[9px] uppercase font-bold text-gray-400 block mb-1">Notes</label>
+                  <label className="text-[9px] uppercase font-bold text-gray-500 block mb-1">Notes</label>
                   <input
                     type="text"
                     placeholder="e.g. Subscription"
                     value={note}
                     onChange={(e) => setNote(e.target.value)}
-                    className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                    className="w-full bg-background border border-white/10 rounded-md p-2 text-xs text-gray-300 focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-700"
                   />
                 </div>
               </div>
@@ -390,7 +391,7 @@ export default function Dashboard({ onTransactionAdded }) {
               <button
                 type="submit"
                 disabled={btnLoading.add}
-                className="w-full bg-primary hover:bg-primary/95 text-background font-bold p-2.5 rounded-lg text-xs transition duration-200"
+                className="w-full bg-transparent border border-dashed border-primary/50 hover:bg-primary hover:text-black text-primary font-bold p-2.5 rounded-md text-[10px] uppercase tracking-widest transition-colors"
               >
                 {btnLoading.add ? "Cognifying..." : "Remember Transaction"}
               </button>
@@ -398,18 +399,18 @@ export default function Dashboard({ onTransactionAdded }) {
           </div>
 
           {/* SMS Webhook simulation */}
-          <div className="border-t border-gray-800/80 pt-5">
-            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-1">
-              <MessageSquare className="w-4 h-4 text-accent" />
+          <div className="border-t border-white/10 pt-5">
+            <h3 className="text-xs uppercase font-bold text-white flex items-center gap-2 mb-1 tracking-wider">
+              <MessageSquare className="w-4 h-4 text-secondary" />
               Mock UPI/SMS Ingestion
             </h3>
-            <p className="text-[11px] text-gray-400">Simulate a real-time incoming SMS transaction notification</p>
+            <p className="text-[10px] text-gray-500 uppercase">Simulate incoming SMS transaction notification</p>
             
             <form onSubmit={handleSmsMock} className="space-y-3 mt-3">
               <select
                 value={smsAccountId}
                 onChange={(e) => setSmsAccountId(e.target.value)}
-                className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                className="w-full bg-background border border-white/10 rounded-md p-2 text-xs text-gray-300 focus:outline-none focus:border-primary/50 transition-colors"
               >
                 {accounts.map(a => <option key={a.id} value={a.id}>{a.name}</option>)}
               </select>
@@ -419,14 +420,14 @@ export default function Dashboard({ onTransactionAdded }) {
                 placeholder="ALERT: Spent Rs. 1800 at Nike Shoes on Card xx123"
                 value={smsText}
                 onChange={(e) => setSmsText(e.target.value)}
-                className="w-full bg-black/40 border border-gray-800 rounded-lg p-2 text-xs text-white"
+                className="w-full bg-background border border-white/10 rounded-md p-2 text-xs text-gray-300 focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-700"
                 required
               />
 
               <button
                 type="submit"
                 disabled={btnLoading.sms || !smsText}
-                className="w-full bg-accent hover:bg-accent/90 text-background font-bold p-2.5 rounded-lg text-xs transition"
+                className="w-full bg-transparent border border-dashed border-secondary/50 hover:bg-secondary hover:text-black text-secondary font-bold p-2.5 rounded-md text-[10px] uppercase tracking-widest transition-colors"
               >
                 {btnLoading.sms ? "Parsing SMS..." : "Ingest Mock SMS"}
               </button>
@@ -435,10 +436,10 @@ export default function Dashboard({ onTransactionAdded }) {
         </div>
 
         {/* Column 2: Connected Bank Accounts & Recent Bank Ledger */}
-        <div className="glass-panel rounded-2xl p-6 space-y-6">
+        <div className="glass-panel rounded-lg p-6 space-y-6">
           {/* Accounts Breakdown */}
           <div>
-            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-3">
+            <h3 className="text-xs uppercase font-bold text-white flex items-center gap-2 mb-3 tracking-wider">
               <Wallet className="w-4 h-4 text-primary" />
               Connected Bank Accounts
             </h3>
@@ -446,13 +447,13 @@ export default function Dashboard({ onTransactionAdded }) {
               {accounts.map(acc => {
                 const isCredit = acc.type === "credit";
                 return (
-                  <div key={acc.id} className="bg-gray-900/40 border border-gray-800 rounded-xl p-3 flex justify-between items-center text-xs">
+                  <div key={acc.id} className="bg-background border border-white/10 rounded-md p-3 flex justify-between items-center text-xs">
                     <div>
-                      <span className="font-bold text-white block">{acc.name}</span>
-                      <span className="text-[10px] text-gray-500 capitalize">{acc.type} Account</span>
+                      <span className="font-bold text-white block uppercase tracking-wider">{acc.name}</span>
+                      <span className="text-[9px] text-gray-500 uppercase">{acc.type} Account</span>
                     </div>
                     <div className="text-right">
-                      <span className={`font-bold ${isCredit ? "text-danger-300" : "text-primary"}`}>
+                      <span className={`font-bold ${isCredit ? "text-danger-400" : "text-primary"}`}>
                         Rs. {acc.balance.toLocaleString()}
                       </span>
                     </div>
@@ -463,14 +464,14 @@ export default function Dashboard({ onTransactionAdded }) {
           </div>
 
           {/* Recent Ingested Transactions Ledger */}
-          <div className="border-t border-gray-800/80 pt-5">
-            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-3">
-              <Clock className="w-4 h-4 text-indigo-400" />
+          <div className="border-t border-white/10 pt-5">
+            <h3 className="text-xs uppercase font-bold text-white flex items-center gap-2 mb-3 tracking-wider">
+              <Clock className="w-4 h-4 text-primary" />
               Recent Bank Ledger
             </h3>
             <div className="space-y-2 max-h-[300px] overflow-y-auto pr-1">
               {transactions.length === 0 ? (
-                <div className="text-center py-12 text-gray-500 text-xs">
+                <div className="text-center py-12 text-gray-600 text-[10px] uppercase border border-dashed border-white/10 rounded-md">
                   No statement transactions found. Use the panel on the left to upload a statement.
                 </div>
               ) : (
@@ -480,18 +481,18 @@ export default function Dashboard({ onTransactionAdded }) {
                   const isHappy = tx.sentiment === "Happy";
                   
                   return (
-                    <div key={tx.id} className="bg-gray-900/30 border border-gray-800/50 rounded-xl p-2.5 flex justify-between items-center text-xs hover:border-gray-700/40 transition">
+                    <div key={tx.id} className="bg-background border border-white/10 rounded-md p-2.5 flex justify-between items-center text-[10px] hover:border-primary/30 transition-colors uppercase">
                       <div className="min-w-0 flex-1 pr-2">
-                        <span className="font-semibold text-gray-200 block truncate">{tx.merchant}</span>
+                        <span className="font-bold text-gray-300 block truncate">{tx.merchant}</span>
                         <span className="text-[9px] text-gray-500 flex items-center gap-1.5 mt-0.5">
                           {tx.date} • {tx.category}
-                          <span className={`w-1.5 h-1.5 rounded-full ${
+                          <span className={`w-1.5 h-1.5 rounded-none ${
                             isRegret ? "bg-danger" : isHappy ? "bg-primary" : "bg-gray-600"
                           }`} title={`Sentiment: ${tx.sentiment}`} />
                         </span>
                       </div>
                       <div className="text-right shrink-0">
-                        <span className={`font-bold ${isDebit ? "text-gray-300" : "text-primary"}`}>
+                        <span className={`font-bold ${isDebit ? "text-gray-400" : "text-primary"}`}>
                           {isDebit ? "-" : "+"} Rs. {Math.abs(tx.amount).toLocaleString()}
                         </span>
                       </div>
@@ -504,23 +505,28 @@ export default function Dashboard({ onTransactionAdded }) {
         </div>
 
         {/* Column 3: Commitments & Goals Lists */}
-        <div className="glass-panel rounded-2xl p-6 space-y-6">
+        <div className="glass-panel rounded-lg p-6 space-y-6">
           {/* Upcoming commitments */}
           <div>
-            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-3">
-              <Calendar className="w-4 h-4 text-indigo-400" />
+            <h3 className="text-xs uppercase font-bold text-white flex items-center gap-2 mb-3 tracking-wider">
+              <Calendar className="w-4 h-4 text-primary" />
               Future Commitments
             </h3>
             <div className="space-y-2">
+              {bills.length === 0 && (
+                <div className="text-center py-6 text-gray-600 text-[10px] uppercase border border-dashed border-white/10 rounded-md">
+                  No upcoming commitments found.
+                </div>
+              )}
               {bills.map(b => (
-                <div key={b.id} className="bg-gray-900/40 border border-gray-800 rounded-xl p-3 flex justify-between items-center text-xs">
+                <div key={b.id} className="bg-background border border-white/10 rounded-md p-3 flex justify-between items-center text-xs">
                   <div>
-                    <span className="font-bold text-white block">{b.name}</span>
-                    <span className="text-[10px] text-gray-500 capitalize">Due: {b.due_date} ({b.interval})</span>
+                    <span className="font-bold text-white block uppercase tracking-wider">{b.name}</span>
+                    <span className="text-[9px] text-gray-500 uppercase">Due: {b.due_date} ({b.interval})</span>
                   </div>
                   <div className="text-right">
-                    <span className="font-bold text-indigo-400 block">Rs. {b.amount.toLocaleString()}</span>
-                    <span className="px-1.5 py-0.5 rounded text-[8px] bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-bold uppercase mt-0.5 inline-block">
+                    <span className="font-bold text-primary block">Rs. {b.amount.toLocaleString()}</span>
+                    <span className="px-1.5 py-0.5 rounded text-[8px] bg-background border border-primary/30 text-primary font-bold uppercase mt-0.5 inline-block">
                       {b.status}
                     </span>
                   </div>
@@ -530,28 +536,33 @@ export default function Dashboard({ onTransactionAdded }) {
           </div>
 
           {/* Active Goals */}
-          <div className="border-t border-gray-800/80 pt-5">
-            <h3 className="text-md font-bold text-white flex items-center gap-2 mb-3">
-              <Goal className="w-4 h-4 text-accent" />
+          <div className="border-t border-white/10 pt-5">
+            <h3 className="text-xs uppercase font-bold text-white flex items-center gap-2 mb-3 tracking-wider">
+              <Goal className="w-4 h-4 text-primary" />
               Savings Targets
             </h3>
             <div className="space-y-3">
+              {goals.length === 0 && (
+                <div className="text-center py-6 text-gray-600 text-[10px] uppercase border border-dashed border-white/10 rounded-md">
+                  No active goals found.
+                </div>
+              )}
               {goals.map(g => {
                 const percent = Math.min(100, Math.round((g.current_amount / g.target_amount) * 100));
                 return (
                   <div key={g.id} className="space-y-1.5 text-xs">
                     <div className="flex justify-between items-center">
                       <div>
-                        <span className="font-bold text-white block">{g.name}</span>
-                        <span className="text-[10px] text-gray-500">Target Date: {g.target_date}</span>
+                        <span className="font-bold text-white block uppercase tracking-wider">{g.name}</span>
+                        <span className="text-[9px] text-gray-500 uppercase">Target Date: {g.target_date}</span>
                       </div>
-                      <div className="text-right font-bold text-white">
+                      <div className="text-right font-bold text-white text-[10px]">
                         Rs. {g.current_amount.toLocaleString()} / {g.target_amount.toLocaleString()}
                       </div>
                     </div>
                     {/* Progress */}
-                    <div className="w-full bg-gray-800 rounded-full h-1.5">
-                      <div className="bg-accent h-1.5 rounded-full" style={{ width: `${percent}%` }} />
+                    <div className="w-full bg-background border border-white/10 rounded-full h-1 relative overflow-hidden">
+                      <div className="bg-primary h-1 absolute left-0 top-0" style={{ width: `${percent}%` }} />
                     </div>
                   </div>
                 );
