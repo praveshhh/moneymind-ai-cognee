@@ -433,89 +433,89 @@ async def upload_csv(
     file_type_label = "PDF" if filename_lower.endswith(".pdf") else "CSV"
     return {"message": f"Successfully parsed {file_type_label} statement. Ingested {imported_count} transactions into SQL database and Cognee memory graph."}
 
-@router.post("/mock-sms")
-async def mock_sms_webhook(
-    sms_text: str = Form(...),
-    account_id: int = Form(...),
-    current_user: User = Depends(get_current_user),
-    db: Session = Depends(get_db)
-):
-    """
-    Simulates real-time transaction ingestion via a mock SMS hook.
-    Format example: "ALERT: Spent Rs 2500 at Nike Shoes on checking card xx123"
-    We will parse the amount and merchant from the string.
-    """
-    account = db.query(Account).filter(Account.id == account_id, Account.user_id == current_user.id).first()
-    if not account:
-        raise HTTPException(status_code=404, detail="Account not found")
-
-    # Simple parsing logic
-    words = sms_text.split()
-    amount = 0.0
-    merchant = "Merchant"
-    
-    # Try to find "Rs" or numbers
-    for i, word in enumerate(words):
-        if word.lower() in ["rs", "inr", "usd", "$"]:
-            try:
-                amount = float(words[i+1].replace(",", ""))
-            except:
-                pass
-        if word.lower() == "at":
-            try:
-                # Get the next two words as merchant name
-                merchant = f"{words[i+1]} {words[i+2]}"
-            except:
-                merchant = words[i+1]
-
-    if amount == 0.0:
-        # Fallback search for any numbers
-        for word in words:
-            try:
-                amount = float(word.replace(",", ""))
-                break
-            except:
-                pass
-
-    # Create transaction
-    new_tx = Transaction(
-        user_id=current_user.id,
-        account_id=account_id,
-        amount=amount,
-        merchant=merchant,
-        category="Shopping",
-        date=datetime.utcnow().date(),
-        type="debit",
-        sentiment="Neutral",
-        note=f"Parsed from mock SMS: '{sms_text}'"
-    )
-    db.add(new_tx)
-    
-    if account.type in ["checking", "savings"]:
-        account.balance -= amount
-    else:
-        account.balance += amount
-
-    db.commit()
-    db.refresh(new_tx)
-
-    # Ingest to Cognee
-    await remember_transaction(
-        user_id=current_user.id,
-        amount=amount,
-        merchant=merchant,
-        category="Shopping",
-        date_str=str(new_tx.date),
-        sentiment="Neutral",
-        note=new_tx.note
-    )
-
-    return {
-        "message": f"Successfully parsed and ingested transaction from mock SMS.",
-        "amount": amount,
-        "merchant": merchant,
-        "transaction_id": new_tx.id
-    }
+# @router.post("/mock-sms")
+# async def mock_sms_webhook(
+#     sms_text: str = Form(...),
+#     account_id: int = Form(...),
+#     current_user: User = Depends(get_current_user),
+#     db: Session = Depends(get_db)
+# ):
+#     """
+#     Simulates real-time transaction ingestion via a mock SMS hook.
+#     Format example: "ALERT: Spent Rs 2500 at Nike Shoes on checking card xx123"
+#     We will parse the amount and merchant from the string.
+#     """
+#     account = db.query(Account).filter(Account.id == account_id, Account.user_id == current_user.id).first()
+#     if not account:
+#         raise HTTPException(status_code=404, detail="Account not found")
+# 
+#     # Simple parsing logic
+#     words = sms_text.split()
+#     amount = 0.0
+#     merchant = "Merchant"
+#     
+#     # Try to find "Rs" or numbers
+#     for i, word in enumerate(words):
+#         if word.lower() in ["rs", "inr", "usd", "$"]:
+#             try:
+#                 amount = float(words[i+1].replace(",", ""))
+#             except:
+#                 pass
+#         if word.lower() == "at":
+#             try:
+#                 # Get the next two words as merchant name
+#                 merchant = f"{words[i+1]} {words[i+2]}"
+#             except:
+#                 merchant = words[i+1]
+# 
+#     if amount == 0.0:
+#         # Fallback search for any numbers
+#         for word in words:
+#             try:
+#                 amount = float(word.replace(",", ""))
+#                 break
+#             except:
+#                 pass
+# 
+#     # Create transaction
+#     new_tx = Transaction(
+#         user_id=current_user.id,
+#         account_id=account_id,
+#         amount=amount,
+#         merchant=merchant,
+#         category="Shopping",
+#         date=datetime.utcnow().date(),
+#         type="debit",
+#         sentiment="Neutral",
+#         note=f"Parsed from mock SMS: '{sms_text}'"
+#     )
+#     db.add(new_tx)
+#     
+#     if account.type in ["checking", "savings"]:
+#         account.balance -= amount
+#     else:
+#         account.balance += amount
+# 
+#     db.commit()
+#     db.refresh(new_tx)
+# 
+#     # Ingest to Cognee
+#     await remember_transaction(
+#         user_id=current_user.id,
+#         amount=amount,
+#         merchant=merchant,
+#         category="Shopping",
+#         date_str=str(new_tx.date),
+#         sentiment="Neutral",
+#         note=new_tx.note
+#     )
+# 
+#     return {
+#         "message": f"Successfully parsed and ingested transaction from mock SMS.",
+#         "amount": amount,
+#         "merchant": merchant,
+#         "transaction_id": new_tx.id
+#     }
 
 class AccountResponse(BaseModel):
     id: int
